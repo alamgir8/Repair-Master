@@ -1,0 +1,39 @@
+
+/* for navigation dropdown style */
+li {
+    display: block;
+    transition-duration: 0.5s;
+   }
+   
+   li:hover {
+     cursor: pointer;
+   }
+   
+   ul li ul {
+     visibility: hidden;
+     opacity: 0;
+     position: absolute;
+     transition: all 0.5s ease;
+     margin-top: 1rem;
+     left: 0;
+     display: none;
+   }
+   
+   ul li:hover > ul,
+   ul li ul:hover {
+     visibility: visible;
+     opacity: 1;
+     display: block;
+   }
+   
+   ul li ul li {
+     clear: both;
+     width: 100%;
+   }
+
+
+   /* for sidebar style */
+   .sidebar-section{
+    background-color: #13D0D1;
+    height: 100vh;
+}

@@ -1,0 +1,77 @@
+/* header section style */
+.header-main-section{
+    height: 550px;
+    background-image: url(./../../img/bg\ \(11\).jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.business-info-section{
+    min-height: 400px;
+    background-color: #3A4256;
+}
+.business-info-section::before{
+    height:500px;
+    content:' ';
+    position: absolute;
+    top: 500;
+    width: 30%;
+    right: 0;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.header-img img{
+    border-radius: 5px;
+}
+
+
+/* all button style */
+.button{
+    border: 1px solid white !important;
+    font-weight: 600 !important;
+}
+.button:hover{
+    color: tomato !important;
+    border: 1px solid red !important;
+}
+
+
+
+/* services section style */
+.service-image img{
+    border-radius: 5px;
+}
+
+
+/* our solution section style */
+.our-solution-section{
+    background-image: url(./../../img/bg-solution.jpg);
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+.fixing-image img{
+    border-radius: 5px;
+}
+
+
+
+/* testimonial section style */
+
+.customer-image img{
+    border-radius: 20px;
+}
+
+
+/* contact us section style */
+.contact-section{
+    background-color: #3A4256;
+}
+
+
+/* all card transition  style*/
+.card{
+    transition: all .8s;
+}
+.card:hover{
+    transform: scale(1.1);
+}
