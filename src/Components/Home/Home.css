@@ -7,7 +7,7 @@
 }
 .business-info-section{
     min-height: 400px;
-    background-color: #3A4256;
+    background-image: url(./../../img/bg\ \(13\).jpg);
 }
 .business-info-section::before{
     height:500px;
@@ -23,18 +23,30 @@
 .header-img img{
     border-radius: 5px;
 }
+.nav-header{
+    color: #fff;
+}
+.nav-header:hover{
+    color: red;
+}
 
 
-/* all button style */
-.button{
-    border: 1px solid white !important;
+/* all button style  & global*/
+.button-white{
+    border: 1px solid #000 !important;
     font-weight: 600 !important;
 }
-.button:hover{
+.button{
+    border: 1px solid #fff !important;
+    font-weight: 600 !important;
+}
+.button:hover, .button-white:hover{
     color: tomato !important;
     border: 1px solid red !important;
 }
-
+.sub-header{
+    color: rgb(211, 0, 0);
+}
 
 
 /* services section style */
@@ -45,8 +57,8 @@
 
 /* our solution section style */
 .our-solution-section{
-    background-image: url(./../../img/bg-solution.jpg);
-    background-position: cover;
+    background-image: url(./../../img/repair\ \(5\).jpg);
+    background-position: center;
     background-repeat: no-repeat;
 }
 .fixing-image img{
@@ -57,21 +69,22 @@
 
 /* testimonial section style */
 
-.customer-image img{
-    border-radius: 20px;
+.testimonial-section{
+    background-image: url(./../../img/bg\ \(13\).jpg);
 }
 
 
 /* contact us section style */
-.contact-section{
-    background-color: #3A4256;
-}
+/* .contact-section{
+    background-image: url(./../../img/bg\ \(16\).jpg);
+} */
 
 
 /* all card transition  style*/
-.card{
+.card-transform{
     transition: all .8s;
 }
-.card:hover{
+.card-transform:hover{
     transform: scale(1.1);
 }
+

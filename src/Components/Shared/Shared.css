@@ -1,5 +1,8 @@
 
 /* for navigation dropdown style */
+.nav-section{
+  background: #000;
+}
 li {
     display: block;
     transition-duration: 0.5s;
@@ -36,4 +39,18 @@ li {
    .sidebar-section{
     background-color: #13D0D1;
     height: 100vh;
+}
+
+/* for footer style */
+.footer-section{
+  /* background-image: url(./../../img/bg\ \(15\).jpg); */
+  background-color: #1f1f1f;
+  color: #696565;
+}
+
+.brand-first{
+  color: white;
+}
+.brand-second{
+  color: red;
 }

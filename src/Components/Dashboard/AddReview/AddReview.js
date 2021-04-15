@@ -14,7 +14,7 @@ const AddReview = () => {
             quote: data.review,
             imageURL: imageURL
         }
-        fetch('http://localhost:5055/addReview', {
+        fetch('https://repair-master-server.herokuapp.com/addReview', {
             method: 'POST',
             headers: {'Content-type' : 'application/json'},
             body: JSON.stringify(reviewData)

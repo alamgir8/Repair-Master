@@ -13,7 +13,7 @@ const AddService = () => {
             info: data.info,
             imageURL: imageURL
         }
-        fetch('http://localhost:5055/addService', {
+        fetch('https://repair-master-server.herokuapp.com/addService', {
             method: 'POST',
             headers: {'Content-type' : 'application/json'},
             body: JSON.stringify(serviceData)

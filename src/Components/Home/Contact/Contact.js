@@ -7,7 +7,7 @@ const Contact = () => {
         console.log(data);
     }
     return (
-        <div className='contact-section my-5 text-white'>
+        <div className='contact-section bg-light py-5'>
             <div className="container p-4">
                 <div className='text-center'>
                     <h6 className='sub-header'>CONTACT US</h6>
@@ -29,7 +29,7 @@ const Contact = () => {
                         </div>
                                             
                         <div className="my-3 text-center pt-3">
-                            <button type="submit" className="btn button text-white px-4 ">SEND</button>
+                            <button type="submit" className="btn button-white px-5 py-2">SEND</button>
                         </div>
                 </form>
             </div>
