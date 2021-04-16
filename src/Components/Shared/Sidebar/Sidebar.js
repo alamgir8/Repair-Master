@@ -11,6 +11,11 @@ const Sidebar = () => {
                             <i className="bi bi-grid-3x3-gap"></i>
                         </span> Dashboard 
                     </Link>
+                    <Link to="/dashboard/allService" className="nav-link text-white"> 
+                        <span className='mx-2'>
+                            <i className="bi bi-card-checklist"></i>
+                        </span> All Service 
+                    </Link>
                     <Link to="/dashboard/addAdmin" className="nav-link text-white"> 
                         <span className='mx-2'>
                             <i className="bi bi-person-plus"></i>
@@ -18,19 +23,25 @@ const Sidebar = () => {
                     </Link>
                     <Link to="/dashboard/addService" className="nav-link text-white"> 
                         <span className='mx-2'>
-                            <i className="bi bi-calendar"></i>
+                            <i className="bi bi-plus-square"></i>
                         </span> Add Service 
+                    </Link>
+                    <Link to="/dashboard/manageService" className="nav-link text-white"> 
+                        <span className='mx-2'>
+                            <i className="bi bi-grid"></i>
+                        </span> Manage Service 
+                    </Link>
+                    <Link to="/dashboard/myService" className="nav-link text-white"> 
+                        <span className='mx-2'>
+                            <i className="bi bi-file-earmark-text"></i>
+                        </span> My Service 
                     </Link>
                     <Link to="/dashboard/addReview" className="nav-link text-white"> 
                         <span className='mx-2'>
                             <i className="bi bi-star"></i>
                         </span> Add Review 
                     </Link>
-                    <Link to="/dashboard/prescription" className="nav-link text-white"> 
-                        <span className='mx-2'>
-                            <i className="bi bi-file-earmark-text"></i>
-                        </span> Prescription 
-                    </Link>
+                   
                    
                     <Link to="/setting" className="nav-link text-white"> 
                         <span className='mx-2'>

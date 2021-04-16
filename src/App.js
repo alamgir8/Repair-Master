@@ -5,9 +5,12 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import CheckOut from "./Components/CheckOut/CheckOut/CheckOut";
+
 import AddReview from "./Components/Dashboard/AddReview/AddReview";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import ManageService from "./Components/Dashboard/ManageService/ManageService";
 import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
 import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
@@ -40,9 +43,15 @@ function App() {
                       <Route path='/dashboard/addReview'>
                         <AddReview/>
                       </Route>
+                      <Route path='/dashboard/manageService'>
+                        <ManageService/>
+                      </Route>
                       <PrivateRoute path='/dashboard'>
                         <Dashboard/>
-                      </PrivateRoute>  
+                      </PrivateRoute>
+                      <Route path='/checkout/:_id'>
+                        <CheckOut/>
+                      </Route>
                   </Switch>
                 </Router>
          </userContext.Provider>

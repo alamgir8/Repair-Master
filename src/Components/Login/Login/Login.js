@@ -17,6 +17,13 @@ import { Link } from 'react-router-dom';
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
 
+    // const setUserToken = () => {
+    //     firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+    //        sessionStorage.getItem('token', idToken)
+    //       }).catch(error => {
+    //       console.log(error);
+    //       });
+    // }
     
     const history = useHistory();
     const location = useLocation();
@@ -35,6 +42,7 @@ const Login = () => {
         .then((res) => {
         const user = res.user;
         setLoggedInUser(user);
+        // setUserToken();
         history.replace(from);
                    
         }).catch((error) => {
@@ -73,6 +81,7 @@ const Login = () => {
             const user = res.user;
             setLoggedInUser(user);
             setUser(user);
+            // setUserToken();
             history.replace(from);
        
         })

@@ -8,7 +8,6 @@ const AddService = () => {
     const [imageURL, setImageURL] = useState()
     const {register, handleSubmit} = useForm();
     const onSubmit = data => {
-        console.log(data);
         const serviceData = {
             name: data.name,
             info: data.info,
@@ -28,7 +27,7 @@ const AddService = () => {
     }
 
     const handleImageUpload = (e) => {
-        console.log(e.target.files);
+      
         const imageDate = new FormData();
         imageDate.set('key', '12b535c0bab20335db20c56b41e1120a')
         imageDate.append('image', e.target.files[0])

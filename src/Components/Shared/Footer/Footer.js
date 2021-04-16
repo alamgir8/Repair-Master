@@ -73,7 +73,7 @@ const Footer = () => {
 
                     <ul className="list-unstyled my-4">
                     <li className='pt-1'>
-                        <a href="#!" className="text-white"><span className='mx-1'><i className='pt-1'className="bi bi-facebook"></i></span> Facebook</a>
+                        <a href="#!" className="text-white"><span className='mx-1'><i className="bi bi-facebook"></i></span> Facebook</a>
                     </li>
                     <li className='pt-1'>
                         <a href="#!" className="text-white"><span className='mx-1'><i className="bi bi-twitter"></i></span> Twitter</a>
