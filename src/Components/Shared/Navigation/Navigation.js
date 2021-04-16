@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { userContext } from '../../../App';
 import './../Shared.css'
+import icon from './../../../img/mechanic.png'
 
 const Navigation = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
@@ -14,14 +15,17 @@ const Navigation = () => {
                         <span className="navbar-toggler-icon "></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
+                           <div className="py-2">
+                                <img src={icon} alt="icon" className='img-fluid'/>
+                           </div>
                             <ul className="navbar-nav ml-auto mb-lg-0 nav justify-content-end">
-                                <li className="nav-item pt-2">            
+                                <li className="nav-item  pt-1">            
                                     <Link to="/home" className="nav-link mx-3 h6 nav-header"> Home </Link>
                                 </li>
-                                <li className="nav-item pt-2">
+                                <li className="nav-item  pt-1">
                                     <a href="#about-us" className="nav-link mx-3 h6 nav-header">About Us</a>
                                 </li>
-                                <li className="nav-item dropdown pt-2">
+                                <li className="nav-item dropdown  pt-1">
                                     <a className="nav-link dropdown-toggle mx-3 h6 nav-header" href='#service'>
                                         Services
                                     </a>
@@ -40,13 +44,13 @@ const Navigation = () => {
                                         </li>
                                     </ul>
                                 </li>
-                                <li className="nav-item pt-2">
+                                <li className="nav-item  pt-1">
                                 <Link to="/dashboard" className="nav-link mx-3 h6 nav-header"> Dashboard </Link>
                                 </li>
-                                <li className="nav-item pt-2">
+                                <li className="nav-item  pt-1">
                                     <a href="#contact" className="nav-link mx-3 h6 nav-header">Contact</a>
                                 </li>
-                                <li className="nav-item pt-2">
+                                <li className="nav-item  pt-1">
                                     {loggedInUser.displayName ? <span className="nav-link active mx-3 h6 nav-header">{loggedInUser.displayName}</span> : <Link to="/login" className="nav-link active px-3 h6 nav-header">Login</Link>}
                                 </li>
                             </ul>

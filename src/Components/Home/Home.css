@@ -1,8 +1,8 @@
 /* header section style */
 .header-main-section{
-    height: 550px;
-    background-image: url(./../../img/bg\ \(11\).jpg);
-    background-position: center;
+    height: 500px;
+    background-image: url(./../../img/bg-header-t.jpg);
+    background-position: cover;
     background-repeat: no-repeat;
 }
 .business-info-section{
@@ -64,7 +64,9 @@
 .fixing-image img{
     border-radius: 5px;
 }
-
+.our-solution p{
+    font-weight: 500;
+}
 
 
 /* testimonial section style */
@@ -88,3 +90,19 @@
     transform: scale(1.1);
 }
 
+/* news section style */
+.news{
+    cursor: pointer;
+}
+.news{
+    transition: transform .5s ease-out;
+}
+.news:hover{
+    transform: translateY(-15px);
+}
+.news-description h4{
+    font-weight: 400;
+}
+.news-description h4:hover{
+    color: rgb(255, 53, 53);
+}

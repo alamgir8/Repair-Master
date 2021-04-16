@@ -4,6 +4,10 @@ const BusinessCard = () => {
     return (
         <div className='business-card-section my-5'>
             <div className="container">
+            <div className="service-header text-center py-5">
+                    <h6 className='sub-header'>REPAIRING SO FAST <span className='mx-2'><i className="bi bi-speedometer"></i></span></h6>
+                    <h2 className=''>How it works</h2>
+                </div>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card p-3 bg-light my-3">

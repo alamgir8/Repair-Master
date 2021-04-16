@@ -10,7 +10,7 @@ const Contact = () => {
         <div className='contact-section bg-light py-5'>
             <div className="container p-4">
                 <div className='text-center'>
-                    <h6 className='sub-header'>CONTACT US</h6>
+                    <h6 className='sub-header'>CONTACT US <span className='mx-2'><i className="bi bi-envelope"></i></span></h6>
                     <h2 className='main-header'>Always Connect with Us</h2>
                 </div>
                 <form className='p-3 bg-form' onSubmit={handleSubmit(onSubmit)}>

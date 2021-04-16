@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Navigation from '../../Shared/Navigation/Navigation';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 const AddService = () => {
@@ -44,14 +45,15 @@ const AddService = () => {
 
     return (
         <div className='add-service-section'>
+            <Navigation/>
             <div className="container">
             <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                         <Sidebar/>
                     </div>
-                    <div className="col-md-8 offset-md-1">
+                    <div className="col-md-8">
                         <h5 className='py-4 sub-header'>ADD A SERVICE</h5>
-                            <div className="card bg-secondary my-3 p-4">
+                            <div className="card bg-form  my-3 p-4">
                                 <form className='p-3 bg-form' onSubmit={handleSubmit(onSubmit)}>
                                             <div className="mb-3">
                                                 <label className="form-label h6">Photo</label>
@@ -68,7 +70,7 @@ const AddService = () => {
                                             </div>
                                         
                                             <div className="my-3 text-right pt-3">
-                                                <button type="submit" className="btn button">ADD SERVICE</button>
+                                                <button type="submit" className="btn button-white">ADD SERVICE</button>
                                         </div>
                                 </form>
                             </div>

@@ -18,7 +18,7 @@ const Services = () => {
         <div className='services-section my-5'>
             <div className="container">
                 <div className="service-header text-center py-5">
-                    <h6 className='sub-header'>SELECT REPAIR SERVICE</h6>
+                    <h6 className='sub-header'>SELECT <span className='text-dark'>REPAIR</span> SERVICE <span className='mx-2'><i className="bi bi-megaphone"></i></span></h6>
                     <h2>Get your repair started</h2>
                 </div>
                 <div className="row">

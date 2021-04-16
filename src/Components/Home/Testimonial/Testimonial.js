@@ -15,7 +15,7 @@ const Testimonial = () => {
         <div className='testimonial-section py-5'>
             <div className="container">
                 <div className="service-header text-center py-5">
-                    <h6 className='sub-header'>TESTIMONIALS</h6>
+                    <h6 className='sub-header'>TESTIMONIALS <span className='mx-2'><i className="bi bi-star-fill"></i></span></h6>
                     <h2 className='text-white'>Our Customers Reviews</h2>
                 </div>
                 <div className="row">
