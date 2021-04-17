@@ -8,7 +8,7 @@ const AllService = () => {
     const [done, setDone] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/services')
+        fetch('https://repair-master-server.herokuapp.com/services')
         .then(res => res.json())
         .then(data => {
             setServices(data)
@@ -19,7 +19,7 @@ const AllService = () => {
     }, [])
     
     useEffect(() => {
-        fetch('http://localhost:5055/orders')
+        fetch('https://repair-master-server.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => {
             setOrders(data)

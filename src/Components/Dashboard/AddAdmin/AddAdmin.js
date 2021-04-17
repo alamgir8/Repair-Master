@@ -14,7 +14,7 @@ const AddAdmin = () => {
             email: data.email,
             imageURL: imageURL
         }
-        fetch('http://localhost:5055/addAdmin', {
+        fetch('https://repair-master-server.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {'Content-type' : 'application/json'},
             body: JSON.stringify(adminInfo)

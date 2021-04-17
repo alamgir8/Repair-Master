@@ -6,7 +6,7 @@ const OrderedServices = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5055/orders')
+        fetch('https://repair-master-server.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data)
            
@@ -17,7 +17,7 @@ const OrderedServices = () => {
     const handleChange = (id) => {
         const status = document.getElementById('position').value;
        
-        fetch(`http://localhost:5055/updateService/${id}`, {
+        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
             method: 'PATCH',
             headers:{'Content-type' : 'application/json'},
             body: JSON.stringify({status})

@@ -5,7 +5,7 @@ const ManageServiceDetails = (props) => {
 
     const handleDeleteService = (id) => {
        
-        fetch(`http://localhost:5055/deleteService/${id}`, {
+        fetch(`https://repair-master-server.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE',
             headers:{'Content-type' : 'application/json'}
         })

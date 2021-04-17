@@ -49,7 +49,7 @@ const PaymentForm = ({service}) => {
       status: 'Pending',
       orderTime: orderTime,
     };
-    fetch("http://localhost:5055/addOrder", {
+    fetch("https://repair-master-server.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(orderDetails),

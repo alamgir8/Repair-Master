@@ -9,7 +9,7 @@ const CheckOut = () => {
     const [service, setService] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5055/services')
+        fetch('https://repair-master-server.herokuapp.com/services')
         .then(res => res.json())
         .then(data => {
             let result = data.find(element => element._id === _id);
