@@ -8,11 +8,13 @@ const AddService = () => {
     const [imageURL, setImageURL] = useState()
     const {register, handleSubmit} = useForm();
     const onSubmit = data => {
+        const createTime = new Date().toLocaleString().split(",")[0];
         const serviceData = {
             title: data.name,
             info: data.info,
             price: data.price,
-            imageURL: imageURL
+            imageURL: imageURL,
+            createTime: createTime
         }
         fetch('https://repair-master-server.herokuapp.com/addService', {
             method: 'POST',

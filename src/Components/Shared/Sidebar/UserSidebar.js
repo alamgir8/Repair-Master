@@ -13,7 +13,7 @@ const UserSidebar = () => {
                     </Link>
                     <Link to="/dashboard/myService" className="nav-link text-white"> 
                         <span className='mx-2'>
-                            <i className="bi bi-file-earmark-text"></i>
+                            <i className="bi bi-card-checklist"></i>
                         </span> My Service 
                     </Link>
                     <Link to="/dashboard/addReview" className="nav-link text-white"> 
