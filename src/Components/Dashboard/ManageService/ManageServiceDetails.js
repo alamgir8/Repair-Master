@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageServiceDetails = (props) => {
-    const {_id, name, info, imageURL} = props.service;
+    const {_id, title, info, imageURL} = props.service;
 
     const handleDeleteService = (id) => {
         console.log(id);
@@ -23,7 +23,7 @@ const ManageServiceDetails = (props) => {
                 <img src={imageURL} alt="service pic" className='img-fluid'/>
             </div>
             <div className="service-info">
-                <h5 className='py-3'>{name}</h5>
+                <h5 className='py-3'>{title}</h5>
                 {/* <p><small>{info}</small></p> */}
             </div>
             <button onClick={() => handleDeleteService(_id)} className='btn button'>DELETE <span><i className="bi bi-trash"></i></span></button>

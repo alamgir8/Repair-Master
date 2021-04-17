@@ -1,94 +1,98 @@
-import React, { useContext, useState } from 'react';
-import {CardElement, useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement} from '@stripe/react-stripe-js';
-import { userContext } from '../../../App';
+import React, { useContext, useState } from "react";
+import {
+  useStripe,
+  useElements,
+  CardNumberElement,
+  CardCvcElement,
+  CardExpiryElement,
+} from "@stripe/react-stripe-js";
+import { userContext } from "../../../App";
 
 const PaymentForm = ({service}) => {
-    
-    const [loggedInuser, setLoggedInUser] = useContext(userContext);
-    const stripe = useStripe();
-    const elements = useElements();
-    const [paymentError, setPaymentError] = useState(null);
-    const [paymentSuccess, setPaymentSuccess] = useState(null)
+   
+  const stripe = useStripe();
+  const elements = useElements();
+  const [loggedInuser, setLoggedInUser] = useContext(userContext);
+  const [paymentError, setPaymentError] = useState(null);
+  const [paymentSuccess, setPaymentSuccess] = useState(null);
 
-    const handleSubmit = async (event) => {
- 
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
       return;
     }
 
-
-    const cardElement = elements.getElement(CardElement);
-
- 
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
-      type: 'card',
-      card: cardElement,
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card: elements.getElement(CardNumberElement),
     });
-
     if (error) {
-      setPaymentError(error.message)
-      setPaymentSuccess(null)
+      setPaymentError(error.message);
+      setPaymentSuccess(null);
       console.log(error);
     } else {
-        setPaymentSuccess(paymentMethod.id)
-        setPaymentError(null)
-      console.log('[PaymentMethod]', paymentMethod);
+      setPaymentSuccess(paymentMethod.id);
+      setPaymentError(null);
+      
     }
+
     const name = loggedInuser.displayName;
     const email = loggedInuser.email;
-    const orderTime = new Date().toLocaleString().split(',')[0]
-    
-    const orderDetails = {name: name, email: email, service: service, payment: paymentMethod, orderTime: orderTime};
-    fetch('http://localhost:5055/addOrder', {
-        method: 'POST',
-        headers: {'Content-type' : 'application/json'},
-        body: JSON.stringify(orderDetails)
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data) {
-            alert('Your Order Placed Successfully !')
-        }
-    })
+    const orderTime = new Date().toLocaleString().split(",")[0];
 
+    const orderDetails = {
+      name: name,
+      email: email,
+      service: service,
+      payment: paymentMethod,
+      status: 'Pending',
+      orderTime: orderTime,
+    };
+    fetch("http://localhost:5055/addOrder", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(orderDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          alert("Your Order Placed Successfully !");
+        }
+      });
   };
 
   return (
-        <div className="payment-form-section">
-            <div className="container">
-                <div className="payment-form mx-auto">
-                    <form onSubmit={handleSubmit}>
-                        <div className="py-3">
-                            <label className='h6'>Card Number</label>
-                            <div className="form-control">
-                                <CardNumberElement />
-                            </div>
-                        </div>
-                        <div className="py-3">
-                            <label className='h6'>Expiration Date</label>
-                            <CardExpiryElement/>
-                        </div>
-                        <div className="py-3">
-                            <label className='h6'>CVC</label>
-                            <CardCvcElement/>
-                        </div>
-                        <div className="py-1">
-                            {
-                                paymentError && <p className='text-danger'>{paymentError}</p>
-                            }
-                            {
-                                paymentSuccess && <p className='text-success'>Your Payment Successfully Complete</p>
-                            }
-                        </div>
-                        <div className="text-center py-4">
-                            <button className='btn button-white w-50' type="submit" disabled={!stripe}>Order Service $500</button>
-                        </div>
-                    </form>
+        <div className='payment-form-section'>
+            <form onSubmit={handleSubmit}>
+                <div className="py-3">
+                    <label className="h6">Card Number</label>
+                    <CardNumberElement />
                 </div>
-        
-            </div>
+                <div className="py-3">
+                    <label className="h6">Expiration Date</label>
+                    <CardExpiryElement />
+                </div>
+                <div className="py-3">
+                    <label className="h6">CVC</label>
+                    <CardCvcElement />
+                </div>
+                <div className="py-1">
+                    {paymentError && <p className="text-danger">{paymentError}</p>}
+                    {paymentSuccess && (
+                    <p className="text-success">Your Payment Successfully Complete</p>
+                    )}
+                </div>
+                <div className="text-center py-4">
+                    <button
+                    className="btn button-white w-50"
+                    type="submit"
+                    disabled={!stripe}
+                    >
+                    Order Service
+                    </button>
+                </div>
+            </form>
         </div>
   );
 };

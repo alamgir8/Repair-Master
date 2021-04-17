@@ -11,6 +11,7 @@ import AddReview from "./Components/Dashboard/AddReview/AddReview";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import ManageService from "./Components/Dashboard/ManageService/ManageService";
+import OrderedServices from "./Components/Dashboard/OrderedServices/OrderedServices";
 import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
 import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
@@ -45,6 +46,9 @@ function App() {
                       </Route>
                       <Route path='/dashboard/manageService'>
                         <ManageService/>
+                      </Route>
+                      <Route path='/dashboard/orders'>
+                        <OrderedServices/>
                       </Route>
                       <PrivateRoute path='/dashboard'>
                         <Dashboard/>

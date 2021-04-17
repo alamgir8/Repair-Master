@@ -9,8 +9,9 @@ const AddService = () => {
     const {register, handleSubmit} = useForm();
     const onSubmit = data => {
         const serviceData = {
-            name: data.name,
+            title: data.name,
             info: data.info,
+            price: data.price,
             imageURL: imageURL
         }
         fetch('https://repair-master-server.herokuapp.com/addService', {
@@ -62,6 +63,10 @@ const AddService = () => {
                                             <div className="mb-3">
                                                 <label className="form-label h6">Service Name</label>
                                                 <input type="text" name='name' className="form-control" placeholder='Service Name' {...register("name")} required/>
+                                            </div>
+                                            <div className="mb-3">
+                                                <label className="form-label h6">Service price</label>
+                                                <input type="number" name='price' className="form-control" placeholder='Service Cost' {...register("price")} required/>
                                             </div>
                                             <div className="mb-3">
                                                 <label className="form-label h6" >Description</label>

@@ -11,10 +11,10 @@ const Sidebar = () => {
                             <i className="bi bi-grid-3x3-gap"></i>
                         </span> Dashboard 
                     </Link>
-                    <Link to="/dashboard/allService" className="nav-link text-white"> 
+                    <Link to="/dashboard/orders" className="nav-link text-white"> 
                         <span className='mx-2'>
                             <i className="bi bi-card-checklist"></i>
-                        </span> All Service 
+                        </span> All Order
                     </Link>
                     <Link to="/dashboard/addAdmin" className="nav-link text-white"> 
                         <span className='mx-2'>
