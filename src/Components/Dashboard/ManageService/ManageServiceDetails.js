@@ -4,7 +4,7 @@ const ManageServiceDetails = (props) => {
     const {_id, title, info, imageURL} = props.service;
 
     const handleDeleteService = (id) => {
-        console.log(id);
+       
         fetch(`http://localhost:5055/deleteService/${id}`, {
             method: 'DELETE',
             headers:{'Content-type' : 'application/json'}

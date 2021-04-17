@@ -6,11 +6,13 @@ import {
   Route
 } from "react-router-dom";
 import CheckOut from "./Components/CheckOut/CheckOut/CheckOut";
+import AddAdmin from "./Components/Dashboard/AddAdmin/AddAdmin";
 
 import AddReview from "./Components/Dashboard/AddReview/AddReview";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import ManageService from "./Components/Dashboard/ManageService/ManageService";
+import MyService from "./Components/Dashboard/MyService/MyService";
 import OrderedServices from "./Components/Dashboard/OrderedServices/OrderedServices";
 import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
@@ -38,24 +40,30 @@ function App() {
                       <Route path='/login'>
                         <Login/>
                       </Route>
-                      <Route path='/dashboard/addService'>
+                      <PrivateRoute path='/dashboard/addAdmin'>
+                        <AddAdmin/>
+                      </PrivateRoute>
+                      <PrivateRoute path='/dashboard/addService'>
                         <AddService/>
-                      </Route>
-                      <Route path='/dashboard/addReview'>
+                      </PrivateRoute>
+                      <PrivateRoute path='/dashboard/addReview'>
                         <AddReview/>
-                      </Route>
-                      <Route path='/dashboard/manageService'>
+                      </PrivateRoute>
+                      <PrivateRoute path='/dashboard/manageService'>
                         <ManageService/>
-                      </Route>
-                      <Route path='/dashboard/orders'>
+                      </PrivateRoute>
+                      <PrivateRoute path='/dashboard/orders'>
                         <OrderedServices/>
-                      </Route>
+                      </PrivateRoute>
+                      <PrivateRoute path='/dashboard/myService'>
+                        <MyService/>
+                      </PrivateRoute>
                       <PrivateRoute path='/dashboard'>
                         <Dashboard/>
                       </PrivateRoute>
-                      <Route path='/checkout/:_id'>
+                      <PrivateRoute path='/checkout/:_id'>
                         <CheckOut/>
-                      </Route>
+                      </PrivateRoute>
                   </Switch>
                 </Router>
          </userContext.Provider>

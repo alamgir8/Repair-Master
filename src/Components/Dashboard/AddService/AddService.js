@@ -61,11 +61,11 @@ const AddService = () => {
                                             </div>
                                             
                                             <div className="mb-3">
-                                                <label className="form-label h6">Service Name</label>
+                                                <label className="form-label h6">Service Title</label>
                                                 <input type="text" name='name' className="form-control" placeholder='Service Name' {...register("name")} required/>
                                             </div>
                                             <div className="mb-3">
-                                                <label className="form-label h6">Service price</label>
+                                                <label className="form-label h6">Service Cost</label>
                                                 <input type="number" name='price' className="form-control" placeholder='Service Cost' {...register("price")} required/>
                                             </div>
                                             <div className="mb-3">

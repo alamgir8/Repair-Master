@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navigation from '../../Shared/Navigation/Navigation';
-import Sidebar from '../../Shared/Sidebar/Sidebar';
+import UserSidebar from '../../Shared/Sidebar/UserSidebar';
 import './../Dashboard.css'
 
 const AddReview = () => {
@@ -50,7 +50,7 @@ const AddReview = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
-                        <Sidebar/>
+                        <UserSidebar/>
                     </div>
                     <div className="col-md-8 ">
                         <h5 className='py-4 sub-header'>ADD A REVIEW</h5>
