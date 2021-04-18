@@ -41,14 +41,15 @@ const AddAdmin = () => {
     return (
         <div className='add-admin-section'>
             <Navigation/>
-            <div className="container">
+            <div className="px-3 mx-auto">
                 <div className="row">
                     <div className="col-md-3">
                         <Sidebar/>
                     </div>
                     <div className="col-md-9">
-                    <h5 className='py-5 sub-header'>Add A Admin</h5>
+                    
                         <div className="card my-3 p-4">
+                        <h5 className='py-2 sub-header'>Add A Admin</h5>
                             <form className='p-3 bg-form' onSubmit={handleSubmit(onSubmit)}>
                                         <div className="mb-3">
                                             <label className="form-label h6">Photo</label>

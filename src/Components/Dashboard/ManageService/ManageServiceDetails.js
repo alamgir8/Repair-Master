@@ -18,7 +18,7 @@ const ManageServiceDetails = (props) => {
     }
     
     return (
-        <div className='col-md-4 card p-3 m-1 mx-auto'>
+        <div className='col-md-2 offset-md-1 card p-3 m-2'>
             <div className="service-image">
                 <img src={imageURL} alt="service pic" className='img-fluid'/>
             </div>

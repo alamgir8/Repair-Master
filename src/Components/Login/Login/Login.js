@@ -8,6 +8,7 @@ import { useHistory, useLocation } from 'react-router';
 import bgLogin from './../../../img/auth-1b.svg';
 import googleLogo from './../../../img/goggle.jpg'
 import { Link } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 
 
 
@@ -124,7 +125,10 @@ const Login = () => {
                         </div> 
                     </div>
                     <div className="col-md-6 offset-md-1 my-4">
-                            <img src={bgLogin} alt="bgLogin" className='img-fluid'/>
+                        {bgLogin.length === 0 &&   <div className="text-center display-4">
+                            <Spinner animation="grow" variant="warning" />
+                        </div>}
+                        <img src={bgLogin} alt="bgLogin" className='img-fluid'/>
                     </div>
                 </div>
              </div>

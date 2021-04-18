@@ -26,7 +26,7 @@ const Dashboard = () => {
     return (
         <div className='dashboard-section'>
             <Navigation/>
-           <div className="container">
+           <div className="px-3 mx-auto">
                 <div className="row">
                     <div className="col-md-3">
                         {
@@ -36,6 +36,7 @@ const Dashboard = () => {
                         }
                     </div>
                     <div className="col-md-9">
+                        
                         {
                             isAdmin ? <AllService/>
                             :

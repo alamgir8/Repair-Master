@@ -1,5 +1,5 @@
 import React from 'react';
-import fixPhone from './../../../img/fix.jpg';
+
 
 
 
@@ -16,9 +16,7 @@ const OurSolution = () => {
                             <p>Every <span>Repair</span> <span className='brand-second'>Master</span> technician goes through an intensive training process, and we maintain an environment of constant learning, so no device is too new, no technology too complicated.</p>
                             <button className='button-white px-4 py-2 my-3 text-dark'>KNOW MORE</button>
                         </div>
-                        {/* <div className="col-md-6 offset-md-1 fixing-image text-center m-auto">
-                            <img src={fixPhone} alt="fixing phone" className='img-fluid'/>
-                        </div> */}
+                       
                     </div>
                 </div>
             </div> 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import ServiceDetails from './ServiceDetails';
 
 
@@ -21,6 +22,9 @@ const Services = () => {
                     <h6 className='sub-header'>SELECT <span className='text-dark'>REPAIR</span> SERVICE <span className='mx-2'><i className="bi bi-megaphone"></i></span></h6>
                     <h2>Get your repair started</h2>
                 </div>
+                {services.length === 0 &&   <div className="text-center display-4">
+                        <Spinner animation="grow" variant="warning" />
+                </div>}
                 <div className="row">
                     {
                         services.map(service => <ServiceDetails service={service} key={service._id}></ServiceDetails>)

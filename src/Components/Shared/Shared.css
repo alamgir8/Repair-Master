@@ -37,8 +37,15 @@ li {
 
    /* for sidebar style */
    .sidebar-section{
-    background-color: #0BB783;
-    height: 100vh;
+    background-color: #3f4254;
+    
+    min-height: 100%;
+}
+.sidebar-section{
+  min-height: 100%;
+}
+a:hover{
+  color: rgb(241, 14, 82) !important;
 }
 
 /* for footer style */

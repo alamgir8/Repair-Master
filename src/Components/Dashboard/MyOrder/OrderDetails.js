@@ -3,7 +3,7 @@ import React from 'react';
 const OrderDetails = (props) => {
     const {service, status, orderTime} = props.order;
     return (
-        <div className='col-md-6'>
+        <div className='col-md-4 col-sm-6 col-lg-3'>
             <div className="card p-3">
                 <div className="row">
                     <div className="col-md-6 col-sm-6">
@@ -19,16 +19,6 @@ const OrderDetails = (props) => {
                     <h4>{service.title}</h4>
                     <p>{service.info}</p>
                 </div>
-                {/* <div className="row">
-                    <div className="col-md-6 col-sm-6">
-                        <p>
-                            <span className='h6'>Order Cost :</span> ${service.price}
-                        </p>
-                    </div>
-                    <div className="col-md-6 col-sm-6">
-                        <p><span className='h6'>Create Time :</span>{orderTime}</p>
-                    </div>
-                </div> */}
             </div>            
         </div>
     );

@@ -11,10 +11,10 @@ const UserSidebar = () => {
                             <i className="bi bi-grid-3x3-gap"></i>
                         </span> Dashboard 
                     </Link>
-                    <Link to="/dashboard/myService" className="nav-link text-white"> 
+                    <Link to="/dashboard/myOrder" className="nav-link text-white"> 
                         <span className='mx-2'>
                             <i className="bi bi-card-checklist"></i>
-                        </span> My Service 
+                        </span> My Order 
                     </Link>
                     <Link to="/dashboard/addReview" className="nav-link text-white"> 
                         <span className='mx-2'>
@@ -23,16 +23,16 @@ const UserSidebar = () => {
                     </Link>
                    
                    
-                    <Link to="/setting" className="nav-link text-white"> 
+                    {/* <Link to="/" className="nav-link text-white"> 
                         <span className='mx-2'>
                             <i className="bi bi-gear"></i>
                         </span> Setting 
-                    </Link>
-                    <Link to="/home" className="nav-link text-white text-bottom"> 
+                    </Link> */}
+                    {/* <Link to="/" className="nav-link text-white text-bottom"> 
                         <span className='mx-2'>
                             <i className="bi bi-box-arrow-in-right"></i>
                         </span> Lock Out 
-                    </Link>
+                    </Link> */}
                 </nav>
             </div>
             

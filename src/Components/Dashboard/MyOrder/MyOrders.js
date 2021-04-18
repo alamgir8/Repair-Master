@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { userContext } from '../../../App';
 import Navigation from '../../Shared/Navigation/Navigation';
 import UserSidebar from '../../Shared/Sidebar/UserSidebar';
@@ -23,7 +24,7 @@ const MyOrder = () => {
     return (
         <div className='my-service-section'>
             <Navigation/>
-            <div className="container">
+            <div className="px-3 mx-auto">
                 <div className="row">
                     <div className="col-md-3">
                         <UserSidebar/>
@@ -31,6 +32,9 @@ const MyOrder = () => {
                     <div className="col-md-9">
                         <h4 className='my-3'>My Ordered Service</h4>
                         <div className="row">
+                            {orders.length === 0 &&   <div className="text-center display-4">
+                            <Spinner animation="grow" variant="warning" />
+                        </div>}
                             {
                                 orders.map(order => <OrderDetails order={order} key={order._id}></OrderDetails>)
                             }

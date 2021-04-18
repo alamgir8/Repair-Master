@@ -1,3 +1,4 @@
-.add-review-section, .add-service-section{
-    background-color: #faeaec;
+
+.dashboard-section, .add-service-section, .add-review-section, .add-admin-section{
+    background-color: #F3F6F9 ;
 }

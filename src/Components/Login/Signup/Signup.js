@@ -8,6 +8,7 @@ import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import googleLogo from './../../../img/goggle.jpg';
 import bgLogin from './../../../img/auth-1b.svg'
+import { Spinner } from 'react-bootstrap';
 
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
@@ -131,6 +132,9 @@ const Signup = () => {
                                     </div>  
                                 </div>
                                 <div className="col-md-6 offset-md-1 my-4">
+                                    {bgLogin.length === 0 &&   <div className="text-center display-4">
+                                        <Spinner animation="grow" variant="warning" />
+                                    </div>}
                                      <img src={bgLogin} alt="bgLogin" className='img-fluid'/>
                                 </div>
                             </div>

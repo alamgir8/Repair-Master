@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { userContext } from '../../../App';
 
 const CustomerDashboard = () => {
@@ -97,6 +98,9 @@ const CustomerDashboard = () => {
                 
                     <div className="card p-3 my-3">
                     <h5 className='sub-header p-3'>All Order</h5>
+                        {orders.length === 0 &&   <div className="text-center display-4">
+                            <Spinner animation="grow" variant="warning" />
+                        </div>}
                         <table className="table table-borderless">
                             <thead>
                                 <tr>

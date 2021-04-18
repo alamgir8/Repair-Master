@@ -47,12 +47,12 @@ const AddReview = () => {
     return (
         <div className='add-review-section'>
             <Navigation/>
-            <div className="container">
+            <div className="px-3 mx-auto">
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <UserSidebar/>
                     </div>
-                    <div className="col-md-8 ">
+                    <div className="col-md-9">
                         <h5 className='py-4 sub-header'>ADD A REVIEW</h5>
                                 <div className="card bg-form my-3 p-4">
                                     <form className='p-3 bg-form' onSubmit={handleSubmit(onSubmit)}>

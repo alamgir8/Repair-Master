@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 
 const AllService = () => {
     const [services, setServices] = useState([]);
@@ -43,12 +44,12 @@ const AllService = () => {
 
 
     return (
-            <div>
+            <div className='all-service-section'>
                 <div className="row">
                     <div className="col-md-3 my-4">
                         <div className="card bg-danger text-white p-3">
                             <div className="row">
-                                <div className="col-md-4 offset-md-2">
+                                <div className="col-md-6">
                                     <h2 className='display-5'>{orders.length}</h2>
                                 </div>
                                 <div className="col-md-6 m-auto">
@@ -57,22 +58,11 @@ const AllService = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 my-4">
-                        <div className="card bg-primary text-white p-3">
-                            <div className="row">
-                                <div className="col-md-4 offset-md-1">
-                                    <h2 className='display-5'>{ongoing.length}</h2>
-                                </div>
-                                <div className="col-md-7 m-auto">
-                                    <p className='h6'>Order Ongoing</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div className="col-md-3 my-4">
                         <div className="card bg-warning text-white p-3">
                             <div className="row">
-                                <div className="col-md-4 offset-md-2">
+                                <div className="col-md-6">
                                     <h2 className='display-5'>{pending.length}</h2>
                                 </div>
                                 <div className="col-md-6 m-auto">
@@ -82,9 +72,21 @@ const AllService = () => {
                         </div>
                     </div>
                     <div className="col-md-3 my-4">
+                        <div className="card bg-primary text-white p-3">
+                            <div className="row">
+                                <div className="col-md-5">
+                                    <h2 className='display-5'>{ongoing.length}</h2>
+                                </div>
+                                <div className="col-md-7 m-auto">
+                                    <p className='h6'>Order Ongoing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-3 my-4">
                         <div className="card bg-success text-white p-3">
                             <div className="row">
-                                <div className="col-md-4 offset-md-2">
+                                <div className="col-md-6">
                                     <h2 className='display-5'>{done.length}</h2>
                                 </div>
                                 <div className="col-md-6 m-auto">
@@ -96,6 +98,9 @@ const AllService = () => {
                 </div>
                 
                     <div className="card p-3 my-3">
+                        {services.length === 0 &&   <div className="text-center display-4">
+                        <Spinner animation="grow" variant="warning" />
+                    </div>}
                     <h5 className='sub-header p-3'>All Service</h5>
                         <table className="table table-borderless">
                             <thead>
