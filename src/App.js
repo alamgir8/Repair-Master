@@ -18,6 +18,7 @@ import Home from "./Components/Home/Home/Home";
 import Login from "./Components/Login/Login/Login";
 import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
 import Signup from "./Components/Login/Signup/Signup";
+import NoMatch from "./Components/Shared/NoMatch/NoMatch"
 
 export const userContext = createContext();
 
@@ -64,6 +65,9 @@ function App() {
                       <PrivateRoute path='/checkout/:_id'>
                         <CheckOut/>
                       </PrivateRoute>
+                      <Route path="*">
+                      <NoMatch/>
+                  </Route>
                   </Switch>
                 </Router>
          </userContext.Provider>

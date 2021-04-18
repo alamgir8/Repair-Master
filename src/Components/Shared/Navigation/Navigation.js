@@ -26,10 +26,10 @@ const Navigation = () => {
                                     <a href="#about-us" className="nav-link mx-3 h6 nav-header">About Us</a>
                                 </li>
                                 <li className="nav-item dropdown  pt-1">
-                                    <a className="nav-link dropdown-toggle mx-3 h6 nav-header" href='#service'>
+                                    <a className="nav-link mx-3 h6 nav-header" href='#services'>
                                         Services
                                     </a>
-                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <li>
                                             <a className="dropdown-item" href="#smartphone">SmartPhone</a>
                                         </li>
@@ -42,7 +42,7 @@ const Navigation = () => {
                                         <li>
                                             <a className="dropdown-item" href="#laptop">Laptop</a>
                                         </li>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li className="nav-item  pt-1">
                                 <Link to="/dashboard" className="nav-link mx-3 h6 nav-header"> Dashboard </Link>

@@ -16,7 +16,7 @@ const Services = () => {
     }, [])
     
     return (
-        <div className='services-section my-5'>
+        <div id='services' className='services-section my-5'>
             <div className="container">
                 <div className="service-header text-center py-5">
                     <h6 className='sub-header'>SELECT <span className='text-dark'>REPAIR</span> SERVICE <span className='mx-2'><i className="bi bi-megaphone"></i></span></h6>

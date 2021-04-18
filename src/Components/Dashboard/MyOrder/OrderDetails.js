@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const OrderDetails = (props) => {
-    const {service, status, orderTime} = props.order;
+    const {service, status} = props.order;
     
-    // useEffect(() => {
-    //     if (status === 'Done') {
-    //         const colorDone = document.getElementById('status-color');
-    //         colorDone.style.backgroundColor = 'blue'
-    //         console.log(status);
-            
-    //     }
-    //     if (status === 'Pending') {
-    //         const colorPending = document.getElementById('status-color');
-    //         colorPending.style.backgroundColor = 'yellow'
-    //     }
-       
-    // }, [])
-
+  
     return (
         <div className='col-md-4 col-sm-6 col-lg-3 m-auto'>
-            <div className="card p-3">
+            <div className="card my-order p-3">
                 <div className="row">
                     <div className="col-md-6 col-sm-6">
                         <div className="header-img">

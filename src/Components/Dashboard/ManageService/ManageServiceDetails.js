@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageServiceDetails = (props) => {
-    const {_id, title, info, imageURL} = props.service;
+    const {_id, title, imageURL} = props.service;
 
     const handleDeleteService = (id) => {
        

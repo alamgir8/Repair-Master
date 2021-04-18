@@ -34,3 +34,14 @@ h5, .h5{
 .info{
     color: #194350;
 } */
+
+/* My order section style */
+
+
+.my-order{
+    cursor: pointer;
+    transition: transform .5s ease-out;
+}
+.my-order:hover{
+    transform: translateY(-15px);
+}

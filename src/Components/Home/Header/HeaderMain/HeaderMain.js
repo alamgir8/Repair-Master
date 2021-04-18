@@ -4,7 +4,7 @@ import './../../Home.css'
 
 const HeaderMain = () => {
     return (
-        <div className='header-main-section'>
+        <div id='home' className='header-main-section'>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">

@@ -30,16 +30,13 @@ const PaymentForm = ({service}) => {
     if (error) {
       setPaymentError(error.message);
       setPaymentSuccess(null);
-      console.log(error);
+     
     } else {
       setPaymentSuccess(paymentMethod.id);
       setPaymentError(null);
-      
-    }
-
-    const name = loggedInuser.displayName;
-    const email = loggedInuser.email;
-    const orderTime = new Date().toLocaleString().split(",")[0];
+      const name = loggedInuser.displayName;
+      const email = loggedInuser.email;
+      const orderTime = new Date().toLocaleString().split(",")[0];
 
     const orderDetails = {
       name: name,
@@ -60,6 +57,11 @@ const PaymentForm = ({service}) => {
           alert("Your Order Placed Successfully !");
         }
       });
+      
+    }
+
+ 
+    
   };
 
   return (

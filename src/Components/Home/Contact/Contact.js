@@ -7,7 +7,7 @@ const Contact = () => {
         console.log(data);
     }
     return (
-        <div className='contact-section bg-light py-5'>
+        <div id='contact' className='contact-section bg-light py-5'>
             <div className="container p-4">
                 <div className='text-center'>
                     <h6 className='sub-header'>CONTACT US <span className='mx-2'><i className="bi bi-envelope"></i></span></h6>

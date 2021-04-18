@@ -10,11 +10,11 @@ const ServiceDetails = (props) => {
                         <img src={imageURL} alt="service" className='img-fluid'/>
                     </div>
                     <div className="service-title">
-                        <h2 className='py-2'>{title}</h2>
+                        <h4 className='py-2'>{title}</h4>
                         <p>{info}</p>
                     </div>
                     <Link to={`/checkout/${_id}`}>
-                        <button className='btn button text-primary w-100'>SELECT SERVICE</button>
+                        <button className='btn button-white text-primary w-100'>SELECT SERVICE</button>
                     </Link>
                 </div>
             </div>
