@@ -17,7 +17,7 @@ const OrderedServices = () => {
 
     const handlePending = (id) => {
         const statusP = document.getElementById('status-pending').innerText;
-        fetch(`http://localhost:5055/updateService/${id}`, {
+        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
             method: 'PATCH',
             headers:{'Content-type' : 'application/json'},
             body: JSON.stringify({status: statusP})
@@ -33,7 +33,7 @@ const OrderedServices = () => {
 
     const handleOngoing = (id) => {
         const statusG = document.getElementById('status-ongoing').innerText;
-        fetch(`http://localhost:5055/updateService/${id}`, {
+        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
             method: 'PATCH',
             headers:{'Content-type' : 'application/json'},
             body: JSON.stringify({status: statusG})
@@ -50,7 +50,7 @@ const OrderedServices = () => {
 
     const handleDone= (id) => {
         const statusD = document.getElementById('status-done').innerText;
-        fetch(`http://localhost:5055/updateService/${id}`, {
+        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
             method: 'PATCH',
             headers:{'Content-type' : 'application/json'},
             body: JSON.stringify({status: statusD})
