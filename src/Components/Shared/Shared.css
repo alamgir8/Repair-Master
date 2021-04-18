@@ -1,6 +1,7 @@
 
 /* for navigation dropdown style */
 .nav-section{
+  font-family: "Source Code Pro", monospace;
   background: #000;
 }
 li {
@@ -38,19 +39,18 @@ li {
    /* for sidebar style */
    .sidebar-section{
     background-color: #3f4254;
-    
+    font-family: "Source Code Pro", monospace;
+    height: 100vh;
     min-height: 100%;
 }
-.sidebar-section{
-  min-height: 100%;
-}
+
 a:hover{
   color: rgb(241, 14, 82) !important;
 }
 
 /* for footer style */
 .footer-section{
-  /* background-image: url(./../../img/bg\ \(15\).jpg); */
+  font-family: "Source Code Pro", monospace;
   background-color: #1f1f1f;
   color: #696565;
 }

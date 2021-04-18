@@ -9,6 +9,7 @@ import bgLogin from './../../../img/auth-1b.svg';
 import googleLogo from './../../../img/goggle.jpg'
 import { Link } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
+import './../Login.css'
 
 
 

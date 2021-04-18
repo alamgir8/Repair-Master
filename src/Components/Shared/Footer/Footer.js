@@ -16,7 +16,7 @@ const Footer = () => {
                     </li>
                     <li className='pt-1'>
                     <span className='h6'>Email: </span>
-                        <a href="#!" className="text-white">ahossain38900@gmail.com</a>
+                        <a href="#!" className="text-white">ahossain389@gmail.com</a>
                     </li>
                     <li className='pt-1'>
                     <span className='h6'>Phone: </span>

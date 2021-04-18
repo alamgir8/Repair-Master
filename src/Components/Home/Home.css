@@ -1,12 +1,36 @@
 /* header section style */
+
 .header-main-section{
-    height: 500px;
-    background-image: url(./../../img/bg-header-t.jpg);
-    background-position: cover;
-    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    background: url(./../../img/bg-header-t.jpg) no-repeat center top /cover;
+    
 }
+.header-main-section::before, .our-solution-section::before{
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: .5;
+}
+.header-main{
+    color: #ffffff;
+    position: relative;
+    z-index: 5;
+}
+.header-main p{
+    font-family: "Source Code Pro", monospace;
+    line-height: 1.7;
+}
+
 .business-info-section{
-    min-height: 400px;
+    font-family: "Source Code Pro", monospace;
+    padding: 20px 0;
     background-image: url(./../../img/bg\ \(13\).jpg);
 }
 .business-info-section::before{
@@ -33,10 +57,17 @@
 
 /* all button style  & global*/
 .button-white{
+    font-family: "Source Code Pro", monospace;
     border: 1px solid #000 !important;
     font-weight: 600 !important;
 }
+
+.btn-schedule{
+    font-family: "Source Code Pro", monospace;
+    padding: 10px 15px !important;
+}
 .button{
+    padding: 5px 15px;
     border: 1px solid #fff !important;
     font-weight: 600 !important;
 }
@@ -57,21 +88,27 @@
 
 /* our solution section style */
 .our-solution-section{
-    background-image: url(./../../img/repair\ \(5\).jpg);
-    background-position: center;
-    background-repeat: no-repeat;
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0;
+    background: url(./../../img/repair\ \(5\).jpg) no-repeat center top /cover;
+
 }
 .fixing-image img{
     border-radius: 5px;
 }
-.our-solution p{
-    font-weight: 500;
+.our-solution{
+    color: #ffffff;
 }
+
 
 
 /* testimonial section style */
 
 .testimonial-section{
+    font-family: "Source Code Pro", monospace;
     background-image: url(./../../img/bg\ \(13\).jpg);
 }
 
@@ -105,4 +142,7 @@
 }
 .news-description h4:hover{
     color: rgb(255, 53, 53);
+}
+.services-section, .contact-section, .business-card-section, .news-section{
+    font-family: "Source Code Pro", monospace;
 }

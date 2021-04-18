@@ -26,7 +26,7 @@ const ManageServiceDetails = (props) => {
                 <h5 className='py-3'>{title}</h5>
                 {/* <p><small>{info}</small></p> */}
             </div>
-            <button onClick={() => handleDeleteService(_id)} className='btn button'>DELETE <span><i className="bi bi-trash"></i></span></button>
+            <button onClick={() => handleDeleteService(_id)} className='btn button-white'>DELETE <span><i className="bi bi-trash"></i></span></button>
         </div>
     );
 };

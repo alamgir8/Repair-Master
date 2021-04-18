@@ -20,7 +20,7 @@ const OrderedServices = () => {
             else{
                 const newFilter = data.filter(statusF => statusF.status === filter);
                 setOrders(newFilter)
-                console.log(newFilter);
+               
             }
         }
         )
@@ -30,7 +30,7 @@ const OrderedServices = () => {
     const handleFilter = () => {
         const filterStatus = document.getElementById('filter-status').value;
         setFilter(filterStatus)
-        console.log(filterStatus);
+        
         const orderPending = orders.filter(statusP => statusP.status === 'Pending')
         setPending(orderPending)
 
@@ -53,7 +53,7 @@ const OrderedServices = () => {
             alert('Service Updated Successfully !')
         })
         .catch(error => console.log(error))
-        console.log(statusP);
+        
     }
 
 
@@ -66,11 +66,10 @@ const OrderedServices = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             alert('Service Updated Successfully !')
         })
         .catch(error => console.log(error))
-        console.log(statusG);
+        
     }
 
 
@@ -87,7 +86,7 @@ const OrderedServices = () => {
             alert('Service Updated Successfully !')
         })
         .catch(error => console.log(error))
-        console.log(statusD);
+        
     }
     
 

@@ -1,5 +1,6 @@
 
-.dashboard-section, .add-service-section, .add-review-section, .add-admin-section, .orders-section{
+.dashboard-section, .add-service-section, .add-review-section, .add-admin-section, .orders-section, .manage-service-section{
+    font-family: "Source Code Pro", monospace;
     background-color: #F3F6F9 ;
 }
 

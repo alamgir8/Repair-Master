@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Payment from '../Payment/Payment';
+import './../CheckOut.css'
 
 
 const CheckOut = () => {

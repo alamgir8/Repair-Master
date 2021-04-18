@@ -1,3 +1,4 @@
-.sign-up-section{
+.sign-up-section, .login-section{
+    font-family: "Source Code Pro", monospace;
     overflow-y: hidden;
 }

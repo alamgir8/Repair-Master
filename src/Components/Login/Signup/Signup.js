@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import googleLogo from './../../../img/goggle.jpg';
 import bgLogin from './../../../img/auth-1b.svg'
 import { Spinner } from 'react-bootstrap';
+import './../Login.css'
 
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
