@@ -49,7 +49,7 @@ const CustomerDashboard = () => {
                     <div className="col-md-3 my-4">
                         <div className="card bg-danger text-white p-3">
                             <div className="row">
-                                <div className="col-md-4 offset-md-2">
+                                <div className="col-md-5 offset-md-1">
                                     <h2 className='display-5'>{orders.length}</h2>
                                 </div>
                                 <div className="col-md-6 m-auto">
@@ -64,7 +64,7 @@ const CustomerDashboard = () => {
                                 <div className="col-md-4 offset-md-1">
                                     <h2 className='display-5'>{ongoing.length}</h2>
                                 </div>
-                                <div className="col-md-7 m-auto">
+                                <div className="col-md-6 m-auto">
                                     <p className='h6'>Order Ongoing</p>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ const CustomerDashboard = () => {
                     <div className="col-md-3 my-4">
                         <div className="card bg-warning text-white p-3">
                             <div className="row">
-                                <div className="col-md-4 offset-md-2">
+                                <div className="col-md-5 offset-md-1">
                                     <h2 className='display-5'>{pending.length}</h2>
                                 </div>
                                 <div className="col-md-6 m-auto">
@@ -85,7 +85,7 @@ const CustomerDashboard = () => {
                     <div className="col-md-3 my-4">
                         <div className="card bg-success text-white p-3">
                             <div className="row">
-                                <div className="col-md-4 offset-md-2">
+                                <div className="col-md-5 offset-md-1">
                                     <h2 className='display-5'>{done.length}</h2>
                                 </div>
                                 <div className="col-md-6 m-auto">
@@ -96,18 +96,18 @@ const CustomerDashboard = () => {
                     </div>
                 </div>
                 
-                    <div className="card p-3 my-3">
-                    <h5 className='sub-header p-3'>All Order</h5>
+                    <div className="card p-4 my-3">
+                    <h5 className='py-3'>All Order</h5>
                         {orders.length === 0 &&   <div className="text-center display-4">
                             <Spinner animation="grow" variant="warning" />
                         </div>}
                         <table className="table table-borderless">
                             <thead>
                                 <tr>
-                                    <th className='text-secondary text-center'>Sr No</th>
-                                    <th className='text-secondary text-center'>Service Name</th>
-                                    <th className='text-secondary text-center'>Order Time</th>
-                                    <th className='text-secondary text-center'>Price</th>                           
+                                    <th className='fst-italic'>Sr No</th>
+                                    <th className='fst-italic'>Service Name</th>
+                                    <th className='fst-italic'>Order Time</th>
+                                    <th className='fst-italic'>Price</th>                           
                                 </tr>
                             </thead>
                             <tbody>
@@ -115,16 +115,16 @@ const CustomerDashboard = () => {
                                    orders.map((order, index) =>
 
                                 <tr key={order._id}>
-                                    <td className='h6 text-center'>{index + 1}</td>
-                                    <td className='h6 text-center'>{order.service.title}</td>
-                                    <td className='h6 text-center'>{order.orderTime}</td>
-                                    <td className='h6 text-center'>{order.service.price}</td>        
+                                    <td className='h6 text-muted '>{index + 1}</td>
+                                    <td className='h6 text-muted'>{order.service.title}</td>
+                                    <td className='h6 text-muted'>{order.orderTime}</td>
+                                    <td className='h6 text-muted'>{order.service.price}</td>        
                                 </tr>
                                 )
                                }
                                <tr>
-                                    <td colSpan="3" className='h5'>Total Cost</td>
-                                    <td className='h6 text-center'>${totalCost}</td>
+                                    <td colSpan="3" className='h5 pt-4'>Total Cost</td>
+                                    <td className='h6 pt-4 fw-bold'>${totalCost}</td>
                                 </tr>                               
                             </tbody>
                         </table>

@@ -30,9 +30,9 @@ const CheckOut = () => {
                                     <img src={service.imageURL} alt="service" className='img-fluid'/>
                                 </div>
                                 <div className="service-title">
-                                    <h3>{service.title}</h3>
-                                    <p>{service.info}</p>
-                                    <p className='text-center h5'> Service Cost<span className='text-danger'> ${service.price}</span> </p>
+                                    <h4>{service.title}</h4>
+                                    <p><small>{service.info}</small></p>
+                                    <p className='text-muted text-center h5'> Service Cost<span className='text-danger'> ${service.price}</span> </p>
                                 </div>
                             </div>
                         </div>

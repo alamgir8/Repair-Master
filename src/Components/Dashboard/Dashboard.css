@@ -1,4 +1,35 @@
 
-.dashboard-section, .add-service-section, .add-review-section, .add-admin-section{
+.dashboard-section, .add-service-section, .add-review-section, .add-admin-section, .orders-section{
     background-color: #F3F6F9 ;
 }
+
+h5, .h5{
+    font-weight: 400 !important;
+}
+.table th{
+    font-weight: 500;
+}
+.table td{
+    font-weight: 400;
+}
+
+/* for button style */
+.bg-pending{
+    background-color:#d2e69c !important;
+    
+}
+.bg-ongoing{
+    background-color: #8fd9a8 !important;
+}
+.bg-done{
+    background-color: #28b5b5 !important;
+}
+/* .title{
+    color: #f5dc5e;
+}
+.time{
+    color: #ff8882;
+}
+.info{
+    color: #194350;
+} */

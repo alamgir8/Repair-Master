@@ -48,16 +48,16 @@ const AddAdmin = () => {
                     </div>
                     <div className="col-md-9">
                     
-                        <div className="card my-3 p-4">
-                        <h5 className='py-2 sub-header'>Add A Admin</h5>
-                            <form className='p-3 bg-form' onSubmit={handleSubmit(onSubmit)}>
+                        <div className="card p-4 my-3">
+                        <h5 className='py-3'>Add Admin</h5>
+                            <form className='bg-form' onSubmit={handleSubmit(onSubmit)}>
                                         <div className="mb-3">
                                             <label className="form-label h6">Photo</label>
                                             <input type="file" name='file' className="form-control" onChange={handleImageUpload} required />
                                         </div>
                                         
                                         <div className="mb-3">
-                                            <label className="form-label h6">Admin Name</label>
+                                            <label className="form-label h6">Name</label>
                                             <input type="text" name='name' className="form-control" placeholder='Name' {...register("name")} required/>
                                         </div>
                                         <div className="mb-3">
