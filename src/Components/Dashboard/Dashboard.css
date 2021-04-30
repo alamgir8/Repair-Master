@@ -39,9 +39,15 @@ h5, .h5{
 
 
 .my-order{
-    cursor: pointer;
-    transition: transform .5s ease-out;
+    /* cursor: pointer; */
+    /* transition: transform .5s ease-out; */
 }
 .my-order:hover{
-    transform: translateY(-15px);
+    /* transform: translateY(-15px); */
+}
+.star{
+    cursor: pointer;
+}
+.star:hover{
+    color: yellow;
 }

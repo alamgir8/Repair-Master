@@ -32,16 +32,7 @@ const Sidebar = () => {
                             <i className="bi bi-card-checklist"></i>
                         </span> All Order
                     </Link>                
-                    {/* <Link to="" className="nav-link text-white"> 
-                        <span className='mx-2'>
-                            <i className="bi bi-gear"></i>
-                        </span> Setting 
-                    </Link> */}
-                    {/* <Link to="" className="nav-link text-white text-bottom"> 
-                        <span className='mx-2'>
-                            <i className="bi bi-box-arrow-in-right"></i>
-                        </span> Lock Out 
-                    </Link> */}
+                    
                 </nav>
             </div>
             
