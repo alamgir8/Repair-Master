@@ -108,7 +108,7 @@ const Login = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="p-4">
                                         <div className="py-2">
-                                            <input onBlur={handleBlur} className="form-control" name='email' defaultValue='ahossain@gmail.com' type="text" placeholder="Email"  required/>
+                                            <input onBlur={handleBlur} className="form-control" name='email' defaultValue='alamgir@gmail.com' type="text" placeholder="Email"  required/>
                                         </div>
                                         <div className="py-2">
                                             <input onBlur={handleBlur} className="form-control" name='password' defaultValue='allahuakber001' type="password" placeholder="Password" required/>
