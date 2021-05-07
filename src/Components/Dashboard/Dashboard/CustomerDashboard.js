@@ -118,7 +118,7 @@ const CustomerDashboard = () => {
                                     <td className='h6 text-muted '>{index + 1}</td>
                                     <td className='h6 text-muted'>{order.service.title}</td>
                                     <td className='h6 text-muted'>{order.orderTime}</td>
-                                    <td className='h6 text-muted'>{order.service.price}</td>        
+                                    <td className='h6 text-muted'>${order.service.price}</td>        
                                 </tr>
                                 )
                                }
