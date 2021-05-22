@@ -15,9 +15,9 @@ const Navigation = () => {
                         <span className="navbar-toggler-icon "></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
-                           <div className="py-2">
+                           <Link to='/home' className="py-2">
                                 <img src={icon} alt="icon" className='img-fluid'/>
-                           </div>
+                           </Link>
                             <ul className="navbar-nav ml-auto mb-lg-0 nav justify-content-end">
                                 <li className="nav-item  pt-1">            
                                     <Link to="/home" className="nav-link mx-3 h6 nav-header"> Home </Link>
