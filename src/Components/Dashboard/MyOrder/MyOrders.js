@@ -37,8 +37,8 @@ const MyOrder = () => {
                             width={1000}
                             height={550}
                             viewBox="0 0 1000 550"
-                            backgroundColor="#eaeced"
-                            foregroundColor="#ffffff"
+                            backgroundColor="#ababab"
+                            foregroundColor="#fafafa"
                             // {...props}
                         >
                             <rect x="51" y="45" rx="3" ry="3" width="906" height="17" />
