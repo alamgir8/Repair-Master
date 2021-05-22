@@ -27,23 +27,27 @@ const Dashboard = () => {
         <div className='dashboard-section'>
             <Navigation/>
            <div className="px-3 mx-auto">
-                <div className="row">
-                    <div className="col-md-3">
-                        {
-                        isAdmin ?  <Sidebar/> 
-                        :
-                        <UserSidebar/>
-                        }
-                    </div>
-                    <div className="col-md-9">
-                        
-                        {
-                            isAdmin ? <AllService/>
-                            :
-                            <CustomerDashboard/>
-                        }
-                    </div>
-                </div>
+
+               {
+                   isAdmin ?
+                   <div className="row">
+                   <div className="col-md-3">
+                       <Sidebar/> 
+                   </div>
+                   <div className="col-md-9">
+                       <AllService/>
+                   </div>
+               </div>:
+               <div className="row">
+                   <div className="col-md-3"> 
+                       <UserSidebar/>
+                   </div>
+                   <div className="col-md-9">
+                       <CustomerDashboard/>
+                   </div>
+               </div>
+               }
+
             </div>            
         </div>
     );

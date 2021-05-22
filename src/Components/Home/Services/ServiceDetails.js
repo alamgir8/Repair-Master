@@ -1,8 +1,35 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { userContext } from '../../../App';
+import swal from 'sweetalert';
 
 const ServiceDetails = (props) => {
     const {_id, title, info, imageURL} = props.service;
+    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('https://repair-master-server.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: {'Content-type' : 'application/json'},
+            body: JSON.stringify({email: loggedInUser.email})
+        })
+        .then(res => res.json())
+        .then(success => setIsAdmin(success))
+        
+
+    }, []);
+
+    const handleAlert = () => {
+        swal({
+            title: "Admin can't order any service, for order service login with user Account",
+            icon: "error",
+          });
+    }
+
     return (
             <div className='col-md-4'>
                 <div className="card card-transform p-4">
@@ -13,9 +40,14 @@ const ServiceDetails = (props) => {
                         <h4 className='py-2'>{title}</h4>
                         <p>{info}</p>
                     </div>
+                    {isAdmin ? 
+                    <Link to={`/`}>
+                            <button onClick={handleAlert} className='btn button-white text-primary w-100'>SELECT SERVICE</button>
+                    </Link>:
                     <Link to={`/checkout/${_id}`}>
                         <button className='btn button-white text-primary w-100'>SELECT SERVICE</button>
                     </Link>
+                    }
                 </div>
             </div>
     );

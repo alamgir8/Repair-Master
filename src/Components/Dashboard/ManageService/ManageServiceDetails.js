@@ -1,4 +1,6 @@
 import React from 'react';
+import swal from 'sweetalert';
+
 
 const ManageServiceDetails = (props) => {
     const {_id, title, imageURL} = props.service;
@@ -9,11 +11,13 @@ const ManageServiceDetails = (props) => {
             method: 'DELETE',
             headers:{'Content-type' : 'application/json'}
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            alert('Service delete Successfully !')
+        .then(res => {
+            swal({
+                title: "Service delete Successfully!",
+                icon: "success",
+              });
         })
+       
         .catch(error => console.log(error))
     }
     
@@ -24,7 +28,6 @@ const ManageServiceDetails = (props) => {
             </div>
             <div className="service-info">
                 <h5 className='py-3'>{title}</h5>
-                {/* <p><small>{info}</small></p> */}
             </div>
             <button onClick={() => handleDeleteService(_id)} className='btn button-white'>DELETE <span><i className="bi bi-trash"></i></span></button>
         </div>

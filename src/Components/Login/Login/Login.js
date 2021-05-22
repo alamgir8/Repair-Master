@@ -9,7 +9,8 @@ import bgLogin from './../../../img/auth-1b.svg';
 import googleLogo from './../../../img/goggle.jpg'
 import { Link } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
-import './../Login.css'
+import './../Login.css';
+import swal from 'sweetalert';
 
 
 
@@ -83,12 +84,20 @@ const Login = () => {
             const user = res.user;
             setLoggedInUser(user);
             setUser(user);
+            swal({
+                title: "Successfully Login!",
+                icon: "success",
+              });
             // setUserToken();
             history.replace(from);
        
         })
         
         .catch((error) => {
+            swal({
+                title: "Login Error!",
+                icon: "error",
+              });
           const errorMessage = error.message;
           const newUserInfo = {...user};
           newUserInfo.error = errorMessage;
@@ -108,7 +117,7 @@ const Login = () => {
                                 <form onSubmit={handleSubmit}>
                                     <div className="p-4">
                                         <div className="py-2">
-                                            <input onBlur={handleBlur} className="form-control" name='email' defaultValue='alamgir@gmail.com' type="text" placeholder="Email"  required/>
+                                            <input onMouseLeave={handleBlur} className="form-control" name='email' defaultValue='ahossain@gmail.com' type="text" placeholder="Email"  required/>
                                         </div>
                                         <div className="py-2">
                                             <input onBlur={handleBlur} className="form-control" name='password' defaultValue='allahuakber001' type="password" placeholder="Password" required/>

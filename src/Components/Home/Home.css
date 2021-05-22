@@ -30,12 +30,16 @@
     z-index: 5;
 }
 .header-main p{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     line-height: 1.7;
 }
 
 .business-info-section{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     padding: 20px 0;
     background-image: url(./../../img/bg\ \(13\).jpg);
 }
@@ -63,13 +67,17 @@
 
 /* all button style  & global*/
 .button-white{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     border: 1px solid #000 !important;
     font-weight: 600 !important;
 }
 
 .btn-schedule{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     padding: 10px 15px !important;
 }
 .button{
@@ -94,7 +102,9 @@
 
 /* our solution section style */
 .our-solution-section{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     position: relative;
     width: 100%;
     height: 100%;
@@ -114,7 +124,9 @@
 /* testimonial section style */
 
 .testimonial-section{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     background-image: url(./../../img/bg\ \(13\).jpg);
 }
 
@@ -151,5 +163,7 @@
     color: rgb(255, 53, 53);
 }
 .services-section, .contact-section, .business-card-section, .news-section{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
 }

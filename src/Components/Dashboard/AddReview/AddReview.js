@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navigation from '../../Shared/Navigation/Navigation';
 import UserSidebar from '../../Shared/Sidebar/UserSidebar';
-import './../Dashboard.css'
+import './../Dashboard.css';
+import swal from 'sweetalert';
 
 const AddReview = () => {
     const [imageURL, setImageURL] = useState();
@@ -22,7 +23,10 @@ const AddReview = () => {
             body: JSON.stringify(reviewData)
         })
         .then(res => {
-            alert('Thanks for rating us!')
+            swal({
+                title: "Thanks for rating us!",
+                icon: "success",
+              });
         })
         .catch(err => {
             console.log(err);

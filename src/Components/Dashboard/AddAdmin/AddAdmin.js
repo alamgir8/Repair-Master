@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
+import swal from 'sweetalert';
 
 const AddAdmin = () => {
     const {register, handleSubmit} = useForm();
@@ -19,8 +20,11 @@ const AddAdmin = () => {
             headers: {'Content-type' : 'application/json'},
             body: JSON.stringify(adminInfo)
         })
-        .then(res => {
-            alert('Admin Added Successfully !')
+        .then(res => { 
+            swal({
+                title: "Admin Added Successfully!",
+                icon: "success",
+              });
         })
         .catch(err => console.log(err))
     }

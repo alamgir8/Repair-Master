@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
+import swal from 'sweetalert';
+
 
 const AddService = () => {
     const [imageURL, setImageURL] = useState()
@@ -22,7 +24,10 @@ const AddService = () => {
             body: JSON.stringify(serviceData)
         })
         .then(res => {
-            alert('Service added successfully !')
+            swal({
+                title: "Service added successfully!",
+                icon: "success",
+              });
         })
         .catch(err => {
             console.log(err);

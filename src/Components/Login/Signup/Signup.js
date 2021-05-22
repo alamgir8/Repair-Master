@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 import googleLogo from './../../../img/goggle.jpg';
 import bgLogin from './../../../img/auth-1b.svg'
 import { Spinner } from 'react-bootstrap';
-import './../Login.css'
+import './../Login.css';
+import swal from 'sweetalert';
 
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
@@ -73,11 +74,18 @@ const Signup = () => {
             newUserInfo.error = '';
             setUser(newUserInfo);
             updateUserName(user.name)
-            alert('your account created successfully!')
-            
+            swal({
+                title: "your account created successfully!",
+                icon: "success",
+              });
+                     
             
         })
         .catch((error) => {
+            swal({
+                title: "Sign Up Error!",
+                icon: "error",
+              });
             const errorMessage = error.message;
             const newUserInfo = {...user};
             newUserInfo.error = errorMessage;

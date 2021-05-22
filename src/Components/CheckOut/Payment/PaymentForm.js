@@ -7,6 +7,7 @@ import {
   CardExpiryElement,
 } from "@stripe/react-stripe-js";
 import { userContext } from "../../../App";
+import swal from 'sweetalert';
 
 const PaymentForm = ({service}) => {
    
@@ -54,7 +55,10 @@ const PaymentForm = ({service}) => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          alert("Your Order Placed Successfully !");
+          swal({
+            title: "Your Order Placed Successfully!",
+            icon: "success",
+          });
         }
       });
       

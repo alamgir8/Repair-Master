@@ -1,7 +1,10 @@
 
 /* for navigation dropdown style */
 .nav-section{
-  font-family: "Source Code Pro", monospace;
+  /* font-family: "Source Code Pro", monospace; */
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   background: #000;
 }
 li {
@@ -39,7 +42,9 @@ li {
    /* for sidebar style */
    .sidebar-section{
     background-color: #3f4254;
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     height: 100vh;
     min-height: 100%;
 }
@@ -50,7 +55,9 @@ a:hover{
 
 /* for footer style */
 .footer-section{
-  font-family: "Source Code Pro", monospace;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   background-color: #1f1f1f;
   color: #696565;
 }

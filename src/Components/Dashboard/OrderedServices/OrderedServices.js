@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
+import ContentLoader from 'react-content-loader';
+import swal from 'sweetalert';
 
 const OrderedServices = () => {
     const [orders, setOrders] = useState([])
@@ -50,7 +51,10 @@ const OrderedServices = () => {
         })
         .then(res => res.json())
         .then(data => {
-            alert('Service Updated Successfully !')
+            swal({
+                title: "Status Change Successfully!",
+                icon: "success",
+              });
         })
         .catch(error => console.log(error))
         
@@ -66,7 +70,10 @@ const OrderedServices = () => {
         })
         .then(res => res.json())
         .then(data => {
-            alert('Service Updated Successfully !')
+            swal({
+                title: "Status Change Successfully!",
+                icon: "success",
+              });
         })
         .catch(error => console.log(error))
         
@@ -82,8 +89,12 @@ const OrderedServices = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-            alert('Service Updated Successfully !')
+           
+            swal({
+                title: "Status Change Successfully!",
+                icon: "success",
+              });
+            
         })
         .catch(error => console.log(error))
         
@@ -99,11 +110,70 @@ const OrderedServices = () => {
                         <Sidebar/>
                     </div>
                     <div className="col-md-9">
-                    {orders.length === 0 &&   <div className="text-center display-4">
-                        <Spinner animation="grow" variant="warning" />
-                    </div>}
+                    {orders.length === 0 ?  <div className="text-center display-4">
+                    <ContentLoader
+                            width={1000}
+                            height={550}
+                            viewBox="0 0 1000 550"
+                            backgroundColor="#eaeced"
+                            foregroundColor="#ffffff"
+                            // {...props}
+                        >
+                            <rect x="51" y="45" rx="3" ry="3" width="906" height="17" />
+                            <circle cx="879" cy="123" r="11" />
+                            <circle cx="914" cy="123" r="11" />
+                            <rect x="104" y="115" rx="3" ry="3" width="141" height="15" />
+                            <rect x="305" y="114" rx="3" ry="3" width="299" height="15" />
+                            <rect x="661" y="114" rx="3" ry="3" width="141" height="15" />
+                            <rect x="55" y="155" rx="3" ry="3" width="897" height="2" />
+                            <circle cx="880" cy="184" r="11" />
+                            <circle cx="915" cy="184" r="11" />
+                            <rect x="105" y="176" rx="3" ry="3" width="141" height="15" />
+                            <rect x="306" y="175" rx="3" ry="3" width="299" height="15" />
+                            <rect x="662" y="175" rx="3" ry="3" width="141" height="15" />
+                            <rect x="56" y="216" rx="3" ry="3" width="897" height="2" />
+                            <circle cx="881" cy="242" r="11" />
+                            <circle cx="916" cy="242" r="11" />
+                            <rect x="106" y="234" rx="3" ry="3" width="141" height="15" />
+                            <rect x="307" y="233" rx="3" ry="3" width="299" height="15" />
+                            <rect x="663" y="233" rx="3" ry="3" width="141" height="15" />
+                            <rect x="57" y="274" rx="3" ry="3" width="897" height="2" />
+                            <circle cx="882" cy="303" r="11" />
+                            <circle cx="917" cy="303" r="11" />
+                            <rect x="107" y="295" rx="3" ry="3" width="141" height="15" />
+                            <rect x="308" y="294" rx="3" ry="3" width="299" height="15" />
+                            <rect x="664" y="294" rx="3" ry="3" width="141" height="15" />
+                            <rect x="58" y="335" rx="3" ry="3" width="897" height="2" />
+                            <circle cx="881" cy="363" r="11" />
+                            <circle cx="916" cy="363" r="11" />
+                            <rect x="106" y="355" rx="3" ry="3" width="141" height="15" />
+                            <rect x="307" y="354" rx="3" ry="3" width="299" height="15" />
+                            <rect x="663" y="354" rx="3" ry="3" width="141" height="15" />
+                            <rect x="57" y="395" rx="3" ry="3" width="897" height="2" />
+                            <circle cx="882" cy="424" r="11" />
+                            <circle cx="917" cy="424" r="11" />
+                            <rect x="107" y="416" rx="3" ry="3" width="141" height="15" />
+                            <rect x="308" y="415" rx="3" ry="3" width="299" height="15" />
+                            <rect x="664" y="415" rx="3" ry="3" width="141" height="15" />
+                            <rect x="55" y="453" rx="3" ry="3" width="897" height="2" />
+                            <rect x="51" y="49" rx="3" ry="3" width="2" height="465" />
+                            <rect x="955" y="49" rx="3" ry="3" width="2" height="465" />
+                            <circle cx="882" cy="484" r="11" />
+                            <circle cx="917" cy="484" r="11" />
+                            <rect x="107" y="476" rx="3" ry="3" width="141" height="15" />
+                            <rect x="308" y="475" rx="3" ry="3" width="299" height="15" />
+                            <rect x="664" y="475" rx="3" ry="3" width="141" height="15" />
+                            <rect x="55" y="513" rx="3" ry="3" width="897" height="2" />
+                            <rect x="52" y="80" rx="3" ry="3" width="906" height="17" />
+                            <rect x="53" y="57" rx="3" ry="3" width="68" height="33" />
+                            <rect x="222" y="54" rx="3" ry="3" width="149" height="33" />
+                            <rect x="544" y="55" rx="3" ry="3" width="137" height="33" />
+                            <rect x="782" y="56" rx="3" ry="3" width="72" height="33" />
+                            <rect x="933" y="54" rx="3" ry="3" width="24" height="33" />
+                        </ContentLoader>
+                    </div>:
                     
-                   
+                  
                         <div className="card p-2 my-3">
                         <div className="row my-3">
                             <div className="col-md-6">
@@ -118,14 +188,15 @@ const OrderedServices = () => {
                                 </select>
                             </div>
                         </div>
-                        <table className="table table-borderless">
-                            <thead>
+                            <div className="table-responsive">
+                            <table className="table table-borderless table-hover">
+                            <thead className='bg-light'>
                                 <tr>
-                                    <th className='fst-italic'>Customer</th>
-                                    <th className='fst-italic'>Service</th>
-                                    <th className='fst-italic'>Order Date</th>
-                                    <th className='fst-italic'>Status</th>
-                                    <th className='fst-italic text-center'>Action</th>                              
+                                    <th className='fw-bolder'>Customer</th>
+                                    <th className='fw-bolder'>Service</th>
+                                    <th className='fw-bolder'>Order Date</th>
+                                    <th className='fw-bolder'>Status</th>
+                                    <th className='fw-bolder text-center'>Action</th>                              
                                 </tr>
                             </thead>
                             <tbody>
@@ -146,18 +217,19 @@ const OrderedServices = () => {
                                     <td className='h6 status text-muted' id='current-status'>{order.status}</td>
                                     <td>
                                     <span >
-                                        <button onClick={() => (handlePending(order._id))} id='status-pending' className='btn  bg-pending btn-sm mx-1'><small>Pending</small></button>
-                                        <button onClick={() => (handleOngoing(order._id))} id='status-ongoing' className='btn bg-ongoing btn-sm '><small>Ongoing</small></button>
-                                        <button onClick={() => (handleDone(order._id))} id='status-done' className='btn bg-done text-dark btn-sm mx-1'><small>Done</small></button>
+                                        <button onClick={() => (handlePending(order._id))} id='status-pending' className='btn  bg-warning text-white btn-sm m-1'><small>Pending</small></button>
+                                        <button onClick={() => (handleOngoing(order._id))} id='status-ongoing' className='btn bg-info text-white btn-sm m-1'><small>Ongoing</small></button>
+                                        <button onClick={() => (handleDone(order._id))} id='status-done' className='btn bg-success text-white btn-sm m-1'><small>Done</small></button>
                                     </span>
                                     </td>   
                                 </tr>
                                 )
                                } 
                                                             
-                            </tbody>
-                        </table>
-                        </div>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>}
                     </div>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 .sign-up-section, .login-section{
-    font-family: "Source Code Pro", monospace;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
     overflow-y: hidden;
 }
