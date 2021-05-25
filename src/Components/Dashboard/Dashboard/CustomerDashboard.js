@@ -16,7 +16,6 @@ const CustomerDashboard = () => {
         .then(res => res.json())
         .then(data => {
             setOrders(data)
-           
             const orderPending = data.filter(statusP => statusP.status === 'Pending')
             setPending(orderPending)
 
@@ -24,10 +23,7 @@ const CustomerDashboard = () => {
             setOngoing(orderOngoing)
 
             const orderDone = data.filter(statusD => statusD.status === 'Done')
-            setDone(orderDone)
-           
-           
-            
+            setDone(orderDone)  
                   
         })
         .catch(err => console.log(err))

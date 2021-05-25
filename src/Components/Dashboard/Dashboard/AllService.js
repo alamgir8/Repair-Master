@@ -38,7 +38,7 @@ const AllService = () => {
             
                   
         })
-        .catch(err => console.log(err))
+       
 
     }, [])
 

@@ -11,7 +11,6 @@ const ManageService = () => {
         fetch('https://repair-master-server.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setServices(data))
-        .catch(error => console.log(error))
     })
 
     return (
