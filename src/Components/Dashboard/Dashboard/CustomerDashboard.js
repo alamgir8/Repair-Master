@@ -26,7 +26,7 @@ const CustomerDashboard = () => {
             setDone(orderDone)  
                   
         })
-        .catch(err => console.log(err))
+       
 
     }, [])
 

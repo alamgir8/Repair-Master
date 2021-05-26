@@ -25,7 +25,7 @@ const OrderedServices = () => {
             }
         }
         )
-        .catch(error => console.log(error))
+       
     }, [filter])
 
     const handleFilter = () => {
@@ -96,7 +96,7 @@ const OrderedServices = () => {
               });
             
         })
-        .catch(error => console.log(error))
+      
         
     }
     

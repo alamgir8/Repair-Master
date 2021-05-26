@@ -28,9 +28,7 @@ const AddReview = () => {
                 icon: "success",
               });
         })
-        .catch(err => {
-            console.log(err);
-        })
+    
     }
 
     const handleImageUpload = (e) => {

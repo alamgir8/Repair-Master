@@ -9,7 +9,6 @@ const Testimonial = () => {
         fetch('https://repair-master-server.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => setReviews(data))
-        .catch(err => console.log(err))
 
     }, [])
     return (

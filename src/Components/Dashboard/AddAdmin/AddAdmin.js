@@ -26,7 +26,7 @@ const AddAdmin = () => {
                 icon: "success",
               });
         })
-        .catch(err => console.log(err))
+      
     }
 
     const handleImageUpload = (e) => {
@@ -39,7 +39,7 @@ const AddAdmin = () => {
             const url = res.data.data.display_url;
             setImageURL(url)
         })
-        .catch(error => console.log(error))
+       
     }
 
     return (

@@ -16,7 +16,7 @@ const MyOrder = () => {
             setOrders(data)
             
         })
-        .catch(error => console.log(error))
+    
 
     }, [loggedInUser.email])
 
