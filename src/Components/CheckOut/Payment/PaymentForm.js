@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
   useStripe,
   useElements,
@@ -6,16 +6,20 @@ import {
   CardCvcElement,
   CardExpiryElement,
 } from "@stripe/react-stripe-js";
-import { userContext } from "../../../App";
+
 import swal from 'sweetalert';
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../features/userSlice";
+
 
 const PaymentForm = ({service}) => {
+  const [paymentError, setPaymentError] = useState(null);
+  const [paymentSuccess, setPaymentSuccess] = useState(null);
+  const user = useSelector(selectUser)
    
   const stripe = useStripe();
   const elements = useElements();
-  const [loggedInuser, setLoggedInUser] = useContext(userContext);
-  const [paymentError, setPaymentError] = useState(null);
-  const [paymentSuccess, setPaymentSuccess] = useState(null);
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,8 +39,8 @@ const PaymentForm = ({service}) => {
     } else {
       setPaymentSuccess(paymentMethod.id);
       setPaymentError(null);
-      const name = loggedInuser.displayName;
-      const email = loggedInuser.email;
+      const name = user.displayName;
+      const email = user.email;
       const orderTime = new Date().toLocaleString().split(",")[0];
 
     const orderDetails = {

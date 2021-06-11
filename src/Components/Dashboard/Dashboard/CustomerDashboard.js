@@ -1,18 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import ContentLoader from 'react-content-loader';
-import { userContext } from '../../../App';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../features/userSlice';
+
+
 
 const CustomerDashboard = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [orders, setOrders] = useState([]);
     const [pending, setPending] = useState([]);
     const [ongoing, setOngoing] = useState([]);
     const [done, setDone] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const user = useSelector(selectUser)
 
     
     useEffect(() => {
-        fetch(`https://repair-master-server.herokuapp.com/order?email=`+loggedInUser.email)
+        fetch(`https://repair-master-server.herokuapp.com/order?email=`+user.email)
         .then(res => res.json())
         .then(data => {
             setOrders(data)
@@ -23,12 +27,13 @@ const CustomerDashboard = () => {
             setOngoing(orderOngoing)
 
             const orderDone = data.filter(statusD => statusD.status === 'Done')
-            setDone(orderDone)  
+            setDone(orderDone)
+            setLoading(false)
                   
         })
        
 
-    }, [])
+    }, [user.email])
 
     let totalCost = 0;
     for (let i = 0; i < orders.length; i++) {
@@ -92,8 +97,10 @@ const CustomerDashboard = () => {
                     </div>
                 </div>
                 
+                {!loading && orders.length === 0 && <h1 className='text-center my-2'>You Have no Order Yet!</h1> }
+                
                     {
-                        orders.length === 0 ? 
+                        loading ? 
                         <ContentLoader
                             width={1000}
                             height={550}
@@ -155,7 +162,7 @@ const CustomerDashboard = () => {
                             <rect x="933" y="54" rx="3" ry="3" width="24" height="33" />
                         </ContentLoader>:
                         <div className="card p-4 my-3">
-                    <h5 className='py-3'>All Order</h5>
+                        <h5 className='py-3'>All Order</h5>
                        
                         <Table responsive className='table-borderless table-hover'>
                             <thead className='bg-light'>

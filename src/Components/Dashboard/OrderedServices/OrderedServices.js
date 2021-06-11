@@ -9,7 +9,8 @@ const OrderedServices = () => {
     const [pending, setPending] = useState([]);
     const [ongoing, setOngoing] = useState([]);
     const [done, setDone] = useState([]);
-    const [filter, setFilter] = useState([])
+    const [filter, setFilter] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch('https://repair-master-server.herokuapp.com/orders')
@@ -17,6 +18,7 @@ const OrderedServices = () => {
         .then(data => {
             if (orders.length === 0) {
                 setOrders(data)
+                setLoading(false)
             }
             else{
                 const newFilter = data.filter(statusF => statusF.status === filter);
@@ -110,7 +112,8 @@ const OrderedServices = () => {
                         <Sidebar/>
                     </div>
                     <div className="col-md-9">
-                    {orders.length === 0 ?  <div className="text-center display-4">
+                    {loading ?  
+                    <div className="text-center display-4">
                     <ContentLoader
                             width={1000}
                             height={550}

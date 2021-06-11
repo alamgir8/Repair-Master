@@ -1,24 +1,28 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ContentLoader from 'react-content-loader';
-import { userContext } from '../../../App';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../features/userSlice';
 import Navigation from '../../Shared/Navigation/Navigation';
 import UserSidebar from '../../Shared/Sidebar/UserSidebar';
 import OrderDetails from './OrderDetails';
 
 const MyOrder = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const user = useSelector(selectUser)
 
     useEffect(() => {
-        fetch(`https://repair-master-server.herokuapp.com/order?email=`+loggedInUser.email)
+        fetch(`https://repair-master-server.herokuapp.com/order?email=`+user.email)
         .then(res => res.json())
         .then(data => {
             setOrders(data)
+            setLoading(false)
             
         })
+        .catch(error => console.log(error))
     
 
-    }, [loggedInUser.email])
+    }, [user.email])
 
     return (
         <div className='my-service-section'>
@@ -29,8 +33,9 @@ const MyOrder = () => {
                         <UserSidebar/>
                     </div>
                     <div className="col-md-9">
-                        <h4 className='my-4'>My Ordered Service</h4>
-                        {orders.length === 0 ?
+                  
+                        {!loading && orders.length === 0 ? <h1 className='text-center my-5'>You Have no Order Yet!</h1> : <h4 className='my-4'>My Ordered Service</h4> }
+                        {loading ?
                                            
                             <ContentLoader
                             width={1000}

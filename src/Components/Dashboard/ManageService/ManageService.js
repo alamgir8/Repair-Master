@@ -5,12 +5,16 @@ import Sidebar from '../../Shared/Sidebar/Sidebar';
 import ManageServiceDetails from './ManageServiceDetails';
 
 const ManageService = () => {
-    const [services, setServices] = useState([])
+    const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch('https://repair-master-server.herokuapp.com/services')
         .then(res => res.json())
-        .then(data => setServices(data))
+        .then(data => {
+            setServices(data);
+            setLoading(false)
+        })
     })
 
     return (
@@ -23,7 +27,7 @@ const ManageService = () => {
                     </div>
                     
                     <div className="col-md-9 my-5">
-                    {services.length === 0 ?
+                    {loading ?
                     <ContentLoader
                             width={1000}
                             height={550}

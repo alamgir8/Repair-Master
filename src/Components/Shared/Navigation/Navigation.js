@@ -1,11 +1,30 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { userContext } from '../../../App';
 import './../Shared.css'
 import icon from './../../../img/mechanic.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../../../features/userSlice';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { AiFillSetting } from "react-icons/ai";
+import { IoMdHelpCircle, IoMdLogOut } from "react-icons/io";
+import { Avatar } from '@material-ui/core';
+import { auth } from '../../../firebase';
+import swal from "sweetalert";
+
 
 const Navigation = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+    const user = useSelector(selectUser)
+    const dispatch = useDispatch()
+
+    const logoutUser = () => {
+        dispatch(logout());
+        auth.signOut();
+        swal({
+            title: "Successfully Logout!",
+            icon: "success",
+          });
+    }
+
     return (
         <div className="nav-section text-white sticky-top">
         <div className="container">
@@ -29,20 +48,6 @@ const Navigation = () => {
                                     <a className="nav-link mx-3 h6 nav-header" href='#services'>
                                         Services
                                     </a>
-                                    {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <li>
-                                            <a className="dropdown-item" href="#smartphone">SmartPhone</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#smartphone">Tablet/iPad</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#pc">Mac & PC</a>
-                                        </li>
-                                        <li>
-                                            <a className="dropdown-item" href="#laptop">Laptop</a>
-                                        </li>
-                                    </ul> */}
                                 </li>
                                 <li className="nav-item  pt-1">
                                 <Link to="/dashboard" className="nav-link mx-3 h6 nav-header"> Dashboard </Link>
@@ -51,7 +56,16 @@ const Navigation = () => {
                                     <a href="#contact" className="nav-link mx-3 h6 nav-header">Contact</a>
                                 </li>
                                 <li className="nav-item  pt-1">
-                                    {loggedInUser.displayName ? <span className="nav-link active mx-3 h6 nav-header">{loggedInUser.displayName}</span> : <Link to="/login" className="nav-link active px-3 h6 nav-header">Login</Link>}
+                                    <DropdownButton title='Profile'>
+                                        <Dropdown.ItemText>
+                                            <Avatar src={user?.photoUrl} className="header-avatar mx-auto">
+                                                {user?.email[0]}
+                                            </Avatar></Dropdown.ItemText>
+                                        <Dropdown.ItemText className='text-center my-2'>{user?.displayName}</Dropdown.ItemText>
+                                        <Dropdown.Item as="button"><AiFillSetting/> Setting & Privacy</Dropdown.Item>
+                                        <Dropdown.Item as="button"> <IoMdHelpCircle/> Help & Support</Dropdown.Item>
+                                        <Dropdown.Item as="button" ><IoMdLogOut />{user?.displayName ? <span className='mx-2' onClick={logoutUser}>Log Out</span>: <Link to='/login' className='mx-2'>Login</Link> }</Dropdown.Item>
+                                    </DropdownButton>
                                 </li>
                             </ul>
                         </div>

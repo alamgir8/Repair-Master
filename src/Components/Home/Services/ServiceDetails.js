@@ -1,27 +1,28 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useContext } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { userContext } from '../../../App';
 import swal from 'sweetalert';
+import { selectUser } from '../../../features/userSlice';
+
 
 const ServiceDetails = (props) => {
     const {_id, title, info, imageURL} = props.service;
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [isAdmin, setIsAdmin] = useState(false);
+    const user = useSelector(selectUser)
 
     useEffect(() => {
         fetch('https://repair-master-server.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: {'Content-type' : 'application/json'},
-            body: JSON.stringify({email: loggedInUser.email})
+            body: JSON.stringify({email: user?.email})
         })
         .then(res => res.json())
         .then(success => setIsAdmin(success))
         
 
-    }, []);
+    }, [user?.email]);
 
     const handleAlert = () => {
         swal({

@@ -6,6 +6,7 @@ const AllService = () => {
     const [orders, setOrders] = useState([]);
     const [pending, setPending] = useState([]);
     const [ongoing, setOngoing] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [done, setDone] = useState([]);
 
     useEffect(() => {
@@ -13,9 +14,11 @@ const AllService = () => {
         .then(res => res.json())
         .then(data => {
             setServices(data)
+            setLoading(false)
             
         })
         .catch(err => console.log(err))
+       
 
     }, [])
     
@@ -99,7 +102,7 @@ const AllService = () => {
                 
                    
                     {
-                        services.length === 0 ? 
+                        loading ? 
                         <ContentLoader
                             width={1000}
                             height={550}
