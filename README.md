@@ -71,7 +71,7 @@ Here is some Feature of my site:
 
 4. Used conditional formatting or conditional rendering also toggle.
 
-5. Added logo, animation in home page, some design, different title, environment(.env) variable, spinner, product delete option, responsive all device, meaningful name, clear all code and added (programminghero001@gmail.com) email to access admin panel which is required for bonus marks.
+5. Added logo, animation in home page, some design, different title, environment(.env) variable, spinner, product delete option, responsive all device, meaningful name, clear all code and added (programminghero001@gmail.com) email to access admin panel.
 
 6. Used bootstrap and react bootstrap for all design and react hook form for Form.
 

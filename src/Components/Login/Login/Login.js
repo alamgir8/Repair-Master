@@ -90,7 +90,7 @@ const Login = () => {
                       className="form-control"
                       name="email"
                       type="text"
-                      placeholder="(for admin)=alamgirh@gmail.com"
+                      placeholder="admin email=alamgirh@gmail.com"
                       required
                     />
                   </div>
@@ -101,7 +101,7 @@ const Login = () => {
                       className="form-control"
                       name="password"
                       type="password"
-                      placeholder="(for admin)=alamgirh@gmail.com"
+                      placeholder="password=alamgirh@gmail.com"
                       required
                     />
                   </div>
