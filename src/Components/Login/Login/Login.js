@@ -18,7 +18,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-  const { from } = location.state || { from: { pathname: "/" } };
+  const { from } = location.state || { from: { pathname: "/login" } };
 
   const signIn = (e) => {
     e.preventDefault();
@@ -90,7 +90,7 @@ const Login = () => {
                       className="form-control"
                       name="email"
                       type="text"
-                      placeholder="Email"
+                      placeholder="(for admin)=alamgirh@gmail.com"
                       required
                     />
                   </div>
@@ -101,7 +101,7 @@ const Login = () => {
                       className="form-control"
                       name="password"
                       type="password"
-                      placeholder="Password"
+                      placeholder="(for admin)=alamgirh@gmail.com"
                       required
                     />
                   </div>

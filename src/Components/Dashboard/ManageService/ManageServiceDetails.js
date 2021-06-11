@@ -6,7 +6,6 @@ const ManageServiceDetails = (props) => {
     const {_id, title, imageURL} = props.service;
 
     const handleDeleteService = (id) => {
-       
         fetch(`https://repair-master-server.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE',
             headers:{'Content-type' : 'application/json'}

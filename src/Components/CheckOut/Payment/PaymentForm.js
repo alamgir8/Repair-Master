@@ -56,7 +56,6 @@ const PaymentForm = ({service}) => {
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(orderDetails),
     })
-      .then((res) => res.json())
       .then((data) => {
         if (data) {
           swal({
@@ -65,11 +64,7 @@ const PaymentForm = ({service}) => {
           });
         }
       });
-      
-    }
-
- 
-    
+    }    
   };
 
   return (

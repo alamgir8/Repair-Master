@@ -23,7 +23,7 @@ const Signup = () => {
 
   const history = useHistory();
   const location = useLocation();
-  const { from } = location.state || { from: { pathname: "/" } };
+  const { from } = location.state || { from: { pathname: "/login" } };
 
   const register = (e) => {
     e.preventDefault();

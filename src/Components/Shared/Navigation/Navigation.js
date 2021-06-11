@@ -27,8 +27,8 @@ const Navigation = () => {
 
     return (
         <div className="nav-section text-white sticky-top">
-        <div className="container">
-        <nav className="navbar navbar-expand-lg">
+            <div className="container">
+                <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
                         <button className="navbar-toggler navbar-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon "></span>
@@ -70,9 +70,7 @@ const Navigation = () => {
                             </ul>
                         </div>
                     </div>
-                    </nav>
-           
-
+                </nav>
         </div>
     </div>
     );

@@ -3,14 +3,16 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import Sidebar from '../../Shared/Sidebar/Sidebar';
 import ContentLoader from 'react-content-loader';
 import swal from 'sweetalert';
+import { useRef } from 'react';
 
 const OrderedServices = () => {
     const [orders, setOrders] = useState([])
-    const [pending, setPending] = useState([]);
-    const [ongoing, setOngoing] = useState([]);
-    const [done, setDone] = useState([]);
     const [filter, setFilter] = useState([]);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const filterRef = useRef();
+    const doneRef = useRef();
+    const pendingRef = useRef();
+    const ongoingRef = useRef();
 
     useEffect(() => {
         fetch('https://repair-master-server.herokuapp.com/orders')
@@ -27,63 +29,21 @@ const OrderedServices = () => {
             }
         }
         )
+        .catch(error => {
+            console.log(error);
+            setLoading(false)
+        })
        
     }, [filter])
 
     const handleFilter = () => {
-        const filterStatus = document.getElementById('filter-status').value;
-        setFilter(filterStatus)
-        
-        const orderPending = orders.filter(statusP => statusP.status === 'Pending')
-        setPending(orderPending)
-
-        const orderOngoing = orders.filter(statusO => statusO.status === 'Ongoing')
-        setOngoing(orderOngoing)
-
-        const orderDone = orders.filter(statusD => statusD.status === 'Done')
-        setDone(orderDone)
-    }
-
-    const handlePending = (id) => {
-        const statusP = document.getElementById('status-pending').innerText;
-        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
-            method: 'PATCH',
-            headers:{'Content-type' : 'application/json'},
-            body: JSON.stringify({status: statusP})
-        })
-        .then(res => res.json())
-        .then(data => {
-            swal({
-                title: "Status Change Successfully!",
-                icon: "success",
-              });
-        })
-        .catch(error => console.log(error))
+        setFilter(filterRef.current.value);
         
     }
 
 
-    const handleOngoing = (id) => {
-        const statusG = document.getElementById('status-ongoing').innerText;
-        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
-            method: 'PATCH',
-            headers:{'Content-type' : 'application/json'},
-            body: JSON.stringify({status: statusG})
-        })
-        .then(res => res.json())
-        .then(data => {
-            swal({
-                title: "Status Change Successfully!",
-                icon: "success",
-              });
-        })
-        .catch(error => console.log(error))
-        
-    }
-
-
-    const handleDone= (id) => {
-        const statusD = document.getElementById('status-done').innerText;
+    const handleDone = (id) => {
+        const statusD =  doneRef.current.value;
         fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
             method: 'PATCH',
             headers:{'Content-type' : 'application/json'},
@@ -98,9 +58,40 @@ const OrderedServices = () => {
               });
             
         })
-      
-        
-    }
+    };
+
+    const handlePending = (id) => {
+        const statusP =  pendingRef.current.value;    
+        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
+            method: 'PATCH',
+            headers:{'Content-type' : 'application/json'},
+            body: JSON.stringify({status: statusP})
+        })
+        .then(res => res.json())
+        .then(data => {
+            swal({
+                title: "Status Change Successfully!",
+                icon: "success",
+              });
+        })
+    };
+
+    const handleOngoing = (id) => {
+        const statusG =  ongoingRef.current.value;   
+        fetch(`https://repair-master-server.herokuapp.com/updateService/${id}`, {
+            method: 'PATCH',
+            headers:{'Content-type' : 'application/json'},
+            body: JSON.stringify({status: statusG})
+        })
+        .then(res => res.json())
+        .then(data => { 
+            swal({
+                title: "Status Change Successfully!",
+                icon: "success",
+              });
+        })
+    };
+
     
 
     return (
@@ -175,8 +166,6 @@ const OrderedServices = () => {
                             <rect x="933" y="54" rx="3" ry="3" width="24" height="33" />
                         </ContentLoader>
                     </div>:
-                    
-                  
                         <div className="card p-2 my-3">
                         <div className="row my-3">
                             <div className="col-md-6">
@@ -184,7 +173,7 @@ const OrderedServices = () => {
                             </div>
                             <div className="col-md-6">
                             <label className='p-3 text-end h5'>Filter Status</label>
-                                <select onChange={() => handleFilter()} name="status" id="filter-status">
+                                <select onChange={handleFilter} ref={filterRef} name="status">
                                     <option value="Pending">Pending</option>
                                     <option value="Ongoing">Ongoing</option>
                                     <option value="Done">Done</option>
@@ -219,10 +208,11 @@ const OrderedServices = () => {
                                     <td className='h6 time text-muted'>{order.orderTime}</td>
                                     <td className='h6 status text-muted' id='current-status'>{order.status}</td>
                                     <td>
+                                      
                                     <span >
-                                        <button onClick={() => (handlePending(order._id))} id='status-pending' className='btn  bg-warning text-white btn-sm m-1'><small>Pending</small></button>
-                                        <button onClick={() => (handleOngoing(order._id))} id='status-ongoing' className='btn bg-info text-white btn-sm m-1'><small>Ongoing</small></button>
-                                        <button onClick={() => (handleDone(order._id))} id='status-done' className='btn bg-success text-white btn-sm m-1'><small>Done</small></button>
+                                        <button value="Pending" onClick={() => (handlePending(order._id))} ref={pendingRef} className='btn  bg-warning text-white btn-sm m-1'><small>Pending</small></button>
+                                        <button value="Ongoing" onClick={() => (handleOngoing(order._id))} ref={ongoingRef} className='btn bg-info text-white btn-sm m-1'><small>Ongoing</small></button>
+                                        <button value="Done" onClick={() => (handleDone(order._id))} ref={doneRef} className='btn bg-success text-white btn-sm m-1'><small>Done</small></button>
                                     </span>
                                     </td>   
                                 </tr>

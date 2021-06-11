@@ -33,7 +33,6 @@ const AddService = () => {
     }
 
     const handleImageUpload = (e) => {
-      
         const imageDate = new FormData();
         imageDate.set('key', '12b535c0bab20335db20c56b41e1120a')
         imageDate.append('image', e.target.files[0])
@@ -42,7 +41,6 @@ const AddService = () => {
             const url = res.data.data.display_url;
             setImageURL(url)
         })
-      
 
     }
 

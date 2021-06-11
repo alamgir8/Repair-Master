@@ -15,10 +15,11 @@ const AllService = () => {
         .then(data => {
             setServices(data)
             setLoading(false)
-            
         })
-        .catch(err => console.log(err))
-       
+        .catch(err => {
+            console.log(err);
+            setLoading(false)
+        })  
 
     }, [])
     
@@ -27,7 +28,6 @@ const AllService = () => {
         .then(res => res.json())
         .then(data => {
             setOrders(data)
-           
             const orderPending = data.filter(statusP => statusP.status === 'Pending')
             setPending(orderPending)
 
@@ -35,13 +35,9 @@ const AllService = () => {
             setOngoing(orderOngoing)
 
             const orderDone = data.filter(statusD => statusD.status === 'Done')
-            setDone(orderDone)
-           
-           
-            
+            setDone(orderDone)            
                   
         })
-       
 
     }, [])
 
