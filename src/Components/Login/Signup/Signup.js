@@ -30,6 +30,9 @@ const Signup = () => {
     if (!name) {
       return setError("Name is Required");
     }
+    if(!email){
+      return setError('Email is Required!')
+    }
     if (password !== confirmPassword) {
       return setError("Password Not Matched!");
     }
