@@ -7,17 +7,14 @@ const Testimonial = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/reviews')
-        .then(res => res.json())
-        .then(data => {
+       const getReview = async() => {
+       const res = await fetch('https://repair-master-server.herokuapp.com/reviews')
+       const data = await res.json() 
             setReviews(data);
             setLoading(false)
-        })
+        }
 
-        .catch((error) => {
-            console.log(error);
-            setLoading(false)
-        })
+        return getReview()
 
     }, [])
 

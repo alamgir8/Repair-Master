@@ -13,14 +13,19 @@ const ServiceDetails = (props) => {
     const user = useSelector(selectUser)
 
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/isAdmin', {
-            method: 'POST',
-            headers: {'Content-type' : 'application/json'},
-            body: JSON.stringify({email: user?.email})
-        })
-        .then(res => res.json())
-        .then(success => setIsAdmin(success))
+        const getAdmin = async() => {
+        const res = await fetch('https://repair-master-server.herokuapp.com/isAdmin')
+        const data = await res.json()
+            const result = data.find((admin) => admin.email === user?.email)
+            if (result) {
+                setIsAdmin(true)
+            }
+            else{
+                setIsAdmin(false)
+            }
+        }
         
+        return getAdmin();
 
     }, [user?.email]);
 

@@ -10,13 +10,14 @@ const CheckOut = () => {
     const [service, setService] = useState([])
 
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/services')
-        .then(res => res.json())
-        .then(data => {
+        const getService = async() => {
+        const res = await fetch('https://repair-master-server.herokuapp.com/services')
+        const data = await res.json()
             let result = data.find(element => element._id === _id);
             setService(result)
-
-        })
+        }
+        
+        return getService()
     }, [_id])
 
     return (

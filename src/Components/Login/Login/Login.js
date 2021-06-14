@@ -34,12 +34,12 @@ const Login = () => {
             photoURL: userAuth.user.photoURL,
           })
         );
-        history.replace(from);
         swal({
           title: "Successfully Login!",
           icon: "success",
         });
         setError("");
+        history.replace(from)
       })
       .catch((error) => {
         swal({

@@ -15,9 +15,9 @@ const OrderedServices = () => {
     const ongoingRef = useRef();
 
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/orders')
-        .then(res => res.json())
-        .then(data => {
+        const getOrders = async() => {
+        const res = await fetch('https://repair-master-server.herokuapp.com/orders')
+        const data = await res.json()
             if (orders.length === 0) {
                 setOrders(data)
                 setLoading(false)
@@ -28,12 +28,8 @@ const OrderedServices = () => {
                
             }
         }
-        )
-        .catch(error => {
-            console.log(error);
-            setLoading(false)
-        })
-       
+        return getOrders()
+               
     }, [filter])
 
     const handleFilter = () => {

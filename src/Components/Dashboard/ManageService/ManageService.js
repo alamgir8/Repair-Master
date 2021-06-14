@@ -9,16 +9,15 @@ const ManageService = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/services')
-        .then(res => res.json())
-        .then(data => {
+       const getService = async() => {
+       const res = await fetch('https://repair-master-server.herokuapp.com/services')
+       const data = await res.json()
             setServices(data);
             setLoading(false)
-        })
-        .catch(error => {
-            console.log(error);
-            setLoading(false)
-        })
+       }
+
+       return getService()
+       
     }, [])
 
     return (

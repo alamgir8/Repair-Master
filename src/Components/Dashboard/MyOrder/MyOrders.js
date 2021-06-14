@@ -12,17 +12,14 @@ const MyOrder = () => {
     const user = useSelector(selectUser)
 
     useEffect(() => {
-        fetch(`https://repair-master-server.herokuapp.com/order?email=`+user.email)
-        .then(res => res.json())
-        .then(data => {
+        const getOrders = async() => {
+        const res = await fetch(`https://repair-master-server.herokuapp.com/order?email=`+user.email)
+        const data = await res.json()
             setOrders(data)
             setLoading(false)
-            
-        })
-        .catch(error => {
-            console.log(error);
-            setLoading(false)
-        })
+        }
+
+        return getOrders()
       
     }, [user.email])
 

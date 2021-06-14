@@ -93,6 +93,10 @@
     color: rgb(211, 0, 0);
 }
 
+.btn.focus, .btn:focus{
+    outline: 0px !important;
+    box-shadow: none !important;
+}
 
 /* services section style */
 .service-image img, .news-image img{

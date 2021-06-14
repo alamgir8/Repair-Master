@@ -10,23 +10,20 @@ const AllService = () => {
     const [done, setDone] = useState([]);
 
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/services')
-        .then(res => res.json())
-        .then(data => {
+        const getService = async() => {
+        const res = await fetch('https://repair-master-server.herokuapp.com/services')
+        const data = await res.json()
             setServices(data)
             setLoading(false)
-        })
-        .catch(err => {
-            console.log(err);
-            setLoading(false)
-        })  
+        }
 
+        return getService();
     }, [])
     
     useEffect(() => {
-        fetch('https://repair-master-server.herokuapp.com/orders')
-        .then(res => res.json())
-        .then(data => {
+        const getOrders = async() => {
+        const res = await fetch('https://repair-master-server.herokuapp.com/orders')
+        const data = await res.json()
             setOrders(data)
             const orderPending = data.filter(statusP => statusP.status === 'Pending')
             setPending(orderPending)
@@ -36,9 +33,8 @@ const AllService = () => {
 
             const orderDone = data.filter(statusD => statusD.status === 'Done')
             setDone(orderDone)            
-                  
-        })
-
+        }
+         return getOrders()
     }, [])
 
 

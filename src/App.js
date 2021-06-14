@@ -17,7 +17,7 @@ import NoMatch from "./Components/Shared/NoMatch/NoMatch";
 import { login, logout} from "./features/userSlice";
 import { auth } from "./firebase";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
