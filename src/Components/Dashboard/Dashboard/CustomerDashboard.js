@@ -13,28 +13,31 @@ const CustomerDashboard = () => {
   const user = useSelector(selectUser);
 
   useEffect(() => {
+    let unmounted = false;
     const getOrders = async () => {
       const res = await fetch(
         `https://repair-master-server.herokuapp.com/order?email=` + user.email
       );
       const data = await res.json();
-      setOrders(data);
-      const orderPending = data.filter(
-        (statusP) => statusP.status === "Pending"
-      );
-      setPending(orderPending);
+      if (!unmounted) {
+        setOrders(data);
+        const orderPending = data.filter(
+          (statusP) => statusP.status === "Pending"
+        );
+        setPending(orderPending);
 
-      const orderOngoing = data.filter(
-        (statusO) => statusO.status === "Ongoing"
-      );
-      setOngoing(orderOngoing);
+        const orderOngoing = data.filter(
+          (statusO) => statusO.status === "Ongoing"
+        );
+        setOngoing(orderOngoing);
 
-      const orderDone = data.filter((statusD) => statusD.status === "Done");
-      setDone(orderDone);
-      setLoading(false);
+        const orderDone = data.filter((statusD) => statusD.status === "Done");
+        setDone(orderDone);
+        setLoading(false);
+      }
     };
-
-    return getOrders();
+    getOrders();
+    return () => {unmounted = true}
   }, [user.email]);
 
   let totalCost = 0;

@@ -56,7 +56,7 @@ const Login = () => {
     firebase
       .auth()
       .signInWithPopup(googleProvider)
-      .then((res) => {
+      .then(res => {
         swal({
           title: "Login successfully!",
           icon: "success",
@@ -64,7 +64,7 @@ const Login = () => {
         setError("")
         history.replace(from)
       })
-      .catch((error) => {
+      .catch(error => {
         swal({
           title: "Login Error!",
           icon: "error",

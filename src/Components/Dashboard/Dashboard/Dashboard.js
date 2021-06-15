@@ -14,22 +14,25 @@ const Dashboard = () => {
   const user = useSelector(selectUser);
 
   useEffect(() => {
+    let unmounted = false;
     const getAdmin = async () => {
       const res = await fetch(
         "https://repair-master-server.herokuapp.com/isAdmin"
       );
       const data = await res.json();
-      const result = data.find((admin) => admin.email === user?.email);
-      if (result) {
-        setIsAdmin(true);
-        setLoading(false)
-      } else {
-        setIsAdmin(false);
-        setLoading(false)
+      if (!unmounted) {
+        const result = data.find((admin) => admin.email === user?.email);
+        if (result) {
+          setIsAdmin(true);
+          setLoading(false)
+        } else {
+          setIsAdmin(false);
+          setLoading(false)
+        }
       }
     };
-
-    return getAdmin();
+    getAdmin();
+    return () => {unmounted = true}
   }, [user.email]);
 
   return (

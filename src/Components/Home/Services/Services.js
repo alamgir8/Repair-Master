@@ -9,15 +9,19 @@ const Services = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        let unmounted = false;
         const getServices = async() => {
         const res = await fetch('https://repair-master-server.herokuapp.com/services')
         const data = await res.json()
-            setServices(data);
-            setLoading(false)
+            if (!unmounted) {
+                setServices(data);
+                setLoading(false)
+            }
  
         }
+        getServices()
 
-        return getServices()
+        return () => {unmounted = true}
 
     }, [])
     

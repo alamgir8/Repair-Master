@@ -7,14 +7,19 @@ const Testimonial = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        let unmounted = false;
        const getReview = async() => {
        const res = await fetch('https://repair-master-server.herokuapp.com/reviews')
-       const data = await res.json() 
-            setReviews(data);
-            setLoading(false)
+       const data = await res.json()
+            if (!unmounted) {
+                setReviews(data);
+                setLoading(false)
+            } 
+            
         }
+        getReview()
 
-        return getReview()
+        return () => { unmounted = true };
 
     }, [])
 
