@@ -7,8 +7,8 @@ import bgLogin from "./../../../img/auth-1b.svg";
 import { Alert, Spinner } from "react-bootstrap";
 import "./../Login.css";
 import swal from "sweetalert";
-import { auth} from "../../../firebase";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import auth from "../../../firebase";
 
 
 

@@ -15,7 +15,8 @@ import PrivateRoute from "./Components/Login/PrivateRoute/PrivateRoute";
 import Signup from "./Components/Login/Signup/Signup";
 import NoMatch from "./Components/Shared/NoMatch/NoMatch";
 import { login, logout} from "./features/userSlice";
-import { auth } from "./firebase";
+import auth from "./firebase";
+
 
 const App = () => {
   const dispatch = useDispatch();

@@ -8,8 +8,8 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { AiFillSetting } from "react-icons/ai";
 import { IoMdHelpCircle, IoMdLogOut } from "react-icons/io";
 import { Avatar } from '@material-ui/core';
-import { auth } from '../../../firebase';
 import swal from "sweetalert";
+import auth from '../../../firebase';
 
 
 const Navigation = () => {

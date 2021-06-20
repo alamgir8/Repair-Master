@@ -7,9 +7,9 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { Alert, Spinner } from "react-bootstrap";
 import "./../Login.css";
 import swal from "sweetalert";
-import { auth } from "../../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../../../features/userSlice";
+import auth from "../../../firebase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
